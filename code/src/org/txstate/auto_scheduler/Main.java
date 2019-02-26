@@ -2,6 +2,9 @@ package org.txstate.auto_scheduler;
 
 public class Main {
 
+	public Main () {
+	}
+	
 	public static void main(String[] args) {
 		
 		OperationContextParser parser = new OperationContextParser();
