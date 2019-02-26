@@ -2,7 +2,7 @@ package org.txstate.auto_scheduler;
 
 public class OperationServiceFactory {
 	
-	public Operator get(OperationContext context) {
+	public ScheduleAction get(OperationContext context) {
 		OperationContext.OperationCode opCode = context.getOperationCode();
 		switch (opCode) {
 		case Schedule:

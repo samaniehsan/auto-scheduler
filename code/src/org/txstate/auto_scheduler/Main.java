@@ -10,7 +10,8 @@ public class Main {
 		if(opContext == null)
 			printUsage();
 		else {
-			
+			OperationServiceFactory factory = new OperationServiceFactory();
+			factory.get(opContext).execute(opContext);
 		}
 	}	
 	

@@ -35,7 +35,5 @@ public class OperationContext {
 	
 	public String getScheduleId() {
         return this.scheduleId;
-    }
-	
-	
+    }	
 }
