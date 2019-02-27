@@ -1,5 +1,5 @@
 package org.txstate.auto_scheduler;
 
 public interface StudentCourseGradeService {
-	StudentRecordSet recordRepository
+	boolean hasCourse(String studentId,String courseCode);
 }
