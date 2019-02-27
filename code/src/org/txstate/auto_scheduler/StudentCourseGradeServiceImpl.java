@@ -23,7 +23,7 @@ public class StudentCourseGradeServiceImpl implements StudentCourseGradeService 
 	Dictionary<String, StudentRecord> getMap(String studentId) {
 		Collection<StudentRecord> records = recordRepository.get(studentId);
 		Dictionary<String, StudentRecord> map = new Hashtable<String, StudentRecord>();
-		if(records == null) {
+		if(records != null) {
 			for(StudentRecord record : records) {
 				if(record != null)
 					//TODO; loop through and only add the highest grade achieved.
