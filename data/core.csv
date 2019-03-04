@@ -1,0 +1,69 @@
+"ART 2313","Introduction to Fine Arts
+","None","Creative Arts"
+"BIO 1320","Modern Biology I
+","None","Science"
+"BIO 1421","Modern Biology II
+","BIO 1320","Science"
+"CHEM 1341","General Chemistry I
+","MATH 1315","Science"
+"CHEM 1342","General Chemistry II
+","CHEM 1341","Science"
+"DAN 2313","Introduction to Fine Arts
+","None","Creative Arts"
+"ECO 2301","Principles of Economics
+","None","Social and Behavioral Sciences"
+"ENG 1310","College Writing 1
+","None","English"
+"ENG 1320","College Writing 2
+","None","English"
+"ENG 2310","British Literature
+","ENG 1320","English"
+"ENG 2330","World Literature
+","ENG 1320","English"
+"ENG 2360","US Literature
+","ENG 1320","English"
+"ENG 3303","Technical Writing
+","None","English"
+"HIST 1310","History of the United States to 1877
+","None","American History"
+"HIST 1320","History of the United States, 1877 to Date
+","None","American History"
+"MATH 2472","Calculus II
+","MATH 2471","Mathematics"
+"MATH 3373","Calculus III
+","MATH 2472","Mathematics"
+"MATH 3398","Discrete Math 2
+","MATH 2358","Mathematics"
+"MATH 1315","College Algebra
+","None","Mathematics"
+"MATH 1317","plane Trigonometry
+","MATH 1315","Mathematics"
+"MATH 2358","Discrete Math 1
+","MATH 2471","Mathematics"
+"MATH 2417","Pre-Calculus Mathematics
+","MATH 1315","Mathematics"
+"MATH 2471","Calculus I
+","MATH 2417","Mathematics"
+"MATH 3305","Introduction to Probability and Statistics
+","MATH 2472","Mathematics"
+"MU 2313","Introduction to Fine Arts
+","None","Creative Arts"
+"PHIL 1305","Philosophy and Critical Thinking
+","None","Language, Philosophy, and Culture"
+"PHIL 1320","Ethics and Society
+","None","Language, Philosophy, and Culture"
+"PHYS 1315","General Physics I
+","MATH 1315","Science"
+"PHYS 1325","General Physics II
+
+","PHYS 1315","Science"
+"POSI 2310","Principles of American Government
+","None","Government"
+"POSI 2320","Functions of American Government
+","None","Government"
+"PSY 1300","Introduction to Psychology
+","None","Social and Behavioral Sciences"
+"SOCI 1310","Introduction to Sociology
+","None","Social and Behavioral Sciences"
+"TH 2313","Introduction to Fine Arts
+","None","Creative Arts"
