@@ -1,9 +1,9 @@
-Course_Number,Course_Name,Subject
-MATH2471,Calculus_I,Mathematics
-MATH2472,Calculus_II,Mathematics
-US1100,University_Seminar,General
-ENG1310,College_Writing_1,English
-ENG1320,College_Writing_2,English
+Course_Number,Course_Name,Subject, Prereq
+MATH2471,Calculus_I,Mathematics, N/A
+MATH2472,Calculus_II,Mathematics, MATH2471
+US1100,University_Seminar,General, N/A
+ENG1310,College_Writing_1,English, N/A
+ENG1320,College_Writing_2,English ENG1310
 PHIL1305,Philosophy_and_Critical_Thinking,Philosophy
 COMM1310,Fundamentals_of_Human_Communication,Communication
 MATH2358,Discrete_Math_1,Mathematics
