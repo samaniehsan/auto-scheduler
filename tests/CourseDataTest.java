@@ -1,4 +1,4 @@
-package test.csvread;
+package org.txstate.auto_scheduler;
 
 import org.apache.commons.csv.CSVFormat;
 import org.junit.Test;
