@@ -17,6 +17,10 @@ import static org.junit.Assert.*;
 
 public class CourseDataTest {
 
+    public CourseDataTest() {
+        this.loadData();
+    }
+
     @Test
     public void loadData() {
         CourseData courses = new CourseData();
