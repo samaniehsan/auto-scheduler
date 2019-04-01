@@ -24,11 +24,11 @@ public class CourseInfo {
 
     /**
      * Changes the course number
-     * @param section_number
+     * @param sectionNumber
      */
 
-    public void setSectionNumber(int section_number) {
-        this.sectionNumber = section_number;
+    public void setSectionNumber(int sectionNumber) {
+        this.sectionNumber = sectionNumber;
     }
 
     /**
@@ -42,11 +42,11 @@ public class CourseInfo {
 
     /**
      * Changes the course number
-     * @param course_number
+     * @param courseNumber
      */
 
-    public void setCourseNumber(String course_number) {
-        this.courseNumber = course_number;
+    public void setCourseNumber(String courseNumber) {
+        this.courseNumber = courseNumber;
     }
 
     /**
@@ -60,10 +60,10 @@ public class CourseInfo {
 
     /**
      * Changes course name
-     * @param course_name
+     * @param courseName
      */
-    public void setCourseName(String course_name) {
-        this.courseName = course_name;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
     /**
@@ -123,11 +123,11 @@ public class CourseInfo {
     }
     /**
      * Changes roomNumber
-     * @param room_number
+     * @param roomNumber
      */
 
-    public void setRoomNumber(int room_number) {
-        this.roomNumber = room_number;
+    public void setRoomNumber(int roomNumber) {
+        this.roomNumber = roomNumber;
     }
 
     /**
