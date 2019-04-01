@@ -25,11 +25,11 @@ public class CourseData {
     public List<CourseInfo> loadData() {
         CSVFormat format = CSVFormat.RFC4180.withHeader().withDelimiter(',');
         List<CourseInfo> courses = new ArrayList<CourseInfo>();
-        String degree = "data/computer_science.csv";
+        String degree = "data/classes/computer_science.csv";
         addCourse(courses, degree, format);
-        degree = "data/criminal_justice.csv";
+        degree = "data/classes/criminal_justice.csv";
         addCourse(courses, degree, format);
-        degree = "data/psychology.csv";
+        degree = "data/classes/psychology.csv";
         addCourse(courses, degree, format);
         createSection(courses);
         addRoomTimeDay(courses);
