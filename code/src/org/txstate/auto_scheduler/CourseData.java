@@ -16,10 +16,6 @@ public class CourseData {
 
     private static int section = 11023;
     
-    public CourseData() {
-        this.loadData();
-    }
-
     /**
      * LoadData creates a ArrayList of the CourseInfo
      *
