@@ -6,29 +6,29 @@ package org.txstate.auto_scheduler;
  */
 
 public class CourseInfo {
-    private String course_number;
-    private String course_name;
+    private String courseNumber;
+    private String courseName;
     private String subject;
     private String timeDay;
     private boolean full;
-    private int room_number;
-    private int section_number;
+    private int roomNumber;
+    private int sectionNumber;
 
     /**
      * Gets the section number
      * @return this section number
      */
     public int getSectionNumber() {
-        return section_number;
+        return sectionNumber;
     }
 
     /**
      * Changes the course number
-     * @param section_number
+     * @param sectionNumber
      */
 
-    public void setSectionNumber(int section_number) {
-        this.section_number = section_number;
+    public void setSectionNumber(int sectionNumber) {
+        this.sectionNumber = sectionNumber;
     }
 
     /**
@@ -37,16 +37,16 @@ public class CourseInfo {
      */
 
     public String getCourseNumber() {
-        return course_number;
+        return courseNumber;
     }
 
     /**
      * Changes the course number
-     * @param course_number
+     * @param courseNumber
      */
 
-    public void setCourseNumber(String course_number) {
-        this.course_number = course_number;
+    public void setCourseNumber(String courseNumber) {
+        this.courseNumber = courseNumber;
     }
 
     /**
@@ -55,15 +55,15 @@ public class CourseInfo {
      */
 
     public String getCourseName() {
-        return course_name;
+        return courseName;
     }
 
     /**
      * Changes course name
-     * @param course_name
+     * @param courseName
      */
-    public void setCourseName(String course_name) {
-        this.course_name = course_name;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
     /**
@@ -115,33 +115,33 @@ public class CourseInfo {
         this.full = full;
     }
     /**
-     * Gets room_number
-     * @return room_number
+     * Gets roomNumber
+     * @return roomNumber
      */
     public int getRoomNumber() {
-        return room_number;
+        return roomNumber;
     }
     /**
-     * Changes room_number
-     * @param room_number
+     * Changes roomNumber
+     * @param roomNumber
      */
 
-    public void setRoomNumber(int room_number) {
-        this.room_number = room_number;
+    public void setRoomNumber(int roomNumber) {
+        this.roomNumber = roomNumber;
     }
 
     /**
      * Overrides toString
-     * @return String with course_number, section_number, course_name, subject , timeDay , room_number
+     * @return String with courseNumber, sectionNumber, courseName, subject , timeDay , roomNumber
      */
     @Override
     public String toString(){
-        return "Course Number: "+ course_number +
-                "\nSection Number: " + section_number +
-                "\nCourse Name: " + course_name +
+        return "Course Number: "+ courseNumber +
+                "\nSection Number: " + sectionNumber +
+                "\nCourse Name: " + courseName +
                 "\nSubject: " + subject +
                 "\nTime/Day: " + timeDay +
-                "\nRoom Number: " + room_number +
+                "\nRoom Number: " + roomNumber +
                 "\n";
     }
 
