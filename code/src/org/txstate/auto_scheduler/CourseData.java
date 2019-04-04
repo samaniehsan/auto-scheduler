@@ -14,7 +14,7 @@ import org.apache.commons.csv.CSVRecord;
 
 public class CourseData {
 
-    private static int section = 11023;
+    private static int section = 11000;
     
     /**
      * LoadData creates a ArrayList of the CourseInfo
@@ -33,9 +33,21 @@ public class CourseData {
         addCourse(courses, degree, format);
         createSection(courses);
         addRoomTimeDay(courses);
+        enrolled(courses);
         return courses;
     }
 
+    public static void enrolled(List<CourseInfo> courses){
+        for (int i = 0; i < (courses.size()/12)+ 1;i++) {
+                    courses.get(i).setCapacity(20);
+                    courses.get(i).setEnrolled(1);
+
+
+
+
+        }
+
+    }
     /**
      * Reads each csv file and adds each course to courses ArrayList
      *
@@ -73,6 +85,7 @@ public class CourseData {
      */
 
     public static void addCourse(List<CourseInfo> courses, CourseInfo course) {
+
         CourseInfo t  = new CourseInfo();
         t.setSubject(course.getSubject());
         t.setCourseName(course.getCourseName());
@@ -104,11 +117,10 @@ public class CourseData {
                     courses.get(i).setSectionNumber(section);
                     section++;
                     if (n == 1 || n == 2) {
-                        for (int l = 0; l < 3; l++)
+                        for (int l = 0; l < 2; l++)
                             addCourse(courses, courses.get(i));
 
                     } else if (n == 3 || n == 4) {
-                        for (int l = 0; l < 2; l++)
                             addCourse(courses, courses.get(i));
                     }
                     break;

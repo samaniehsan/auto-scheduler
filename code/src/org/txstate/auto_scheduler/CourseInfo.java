@@ -10,7 +10,8 @@ public class CourseInfo {
     private String courseName;
     private String subject;
     private String timeDay;
-    private boolean full;
+    private int capacity;
+    private int enrolled;
     private int roomNumber;
     private int sectionNumber;
 
@@ -64,6 +65,7 @@ public class CourseInfo {
      */
     public void setCourseName(String courseName) {
         this.courseName = courseName;
+
     }
 
     /**
@@ -103,17 +105,7 @@ public class CourseInfo {
      * @return full
      */
 
-    public boolean isFull() {
-        return full;
-    }
-    /**
-     * Changes course to full
-     * @param full
-     */
 
-    public void setFull(boolean full) {
-        this.full = full;
-    }
     /**
      * Gets roomNumber
      * @return roomNumber
@@ -130,6 +122,22 @@ public class CourseInfo {
         this.roomNumber = roomNumber;
     }
 
+    public int getEnrolled() {
+        return enrolled;
+    }
+
+    public void setEnrolled(int enrolled) {
+        this.enrolled = enrolled;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
     /**
      * Overrides toString
      * @return String with courseNumber, sectionNumber, courseName, subject , timeDay , roomNumber
@@ -142,6 +150,8 @@ public class CourseInfo {
                 "\nSubject: " + subject +
                 "\nTime/Day: " + timeDay +
                 "\nRoom Number: " + roomNumber +
+                "\nCapcacity: " + capacity +
+                "\nEnrolled: " + enrolled +
                 "\n";
     }
 
