@@ -2,6 +2,12 @@ package org.txstate.auto_scheduler;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
+import java.lang.Object; 
+import java.lang.Class;
+import java.lang.ClassLoader;
+import java.io.File;
+import java.io.*;
+import java.net.URL;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
@@ -22,14 +28,14 @@ public class CourseData {
      * @return courses
      */
 
-    public List<CourseInfo> loadData() {
+    public List<CourseInfo> loadData() throws FileNotFoundException, IOException {
         CSVFormat format = CSVFormat.RFC4180.withHeader().withDelimiter(',');
         List<CourseInfo> courses = new ArrayList<CourseInfo>();
-        String degree = "data/classes/computer_science.csv";
+        String degree = "/data/classes/computer_science.csv";
         addCourse(courses, degree, format);
-        degree = "data/classes/criminal_justice.csv";
+        degree = "/data/classes/criminal_justice.csv";
         addCourse(courses, degree, format);
-        degree = "data/classes/psychology.csv";
+        degree = "/data/classes/psychology.csv";
         addCourse(courses, degree, format);
         createSection(courses);
         addRoomTimeDay(courses);
@@ -56,26 +62,29 @@ public class CourseData {
      * @param format
      */
 
-    public static void addCourse(List<CourseInfo> courses, String degree, CSVFormat format) {
+    public static void addCourse(List<CourseInfo> courses, String degree, CSVFormat format) throws FileNotFoundException, IOException  {
         CSVParser parser;
         ArrayList<String> cn = new ArrayList<String>();
-        try {
-            parser = new CSVParser(new FileReader(degree), format);
-            for (CSVRecord record : parser) {
-                if ((cn.isEmpty()) || (!cn.contains((record.get("Course_Number"))))) {
-                    cn.add(record.get("Course_Number"));
-                    CourseInfo cor = new CourseInfo();
-                    cor.setCourseNumber(record.get("Course_Number"));
-                    cor.setCourseName(record.get("Course_Name"));
-                    cor.setSubject(record.get("Subject"));
-                    courses.add(cor);
-                }
+        //Get file from resources folder
+        // ClassLoader classLoader = CourseData.class.getClassLoader();
+        // URL url = classLoader.getResource(degree);
+        URL url = CourseData.class.getResource(degree);
+        System.out.print("url:");
+        String filePath = url.getFile();
+        System.out.print("filepath:"+filePath);
+        File file = new File(filePath);
+        parser = new CSVParser(new FileReader(file), format);
+        for (CSVRecord record : parser) {
+            if ((cn.isEmpty()) || (!cn.contains((record.get("Course_Number"))))) {
+                cn.add(record.get("Course_Number"));
+                CourseInfo cor = new CourseInfo();
+                cor.setCourseNumber(record.get("Course_Number"));
+                cor.setCourseName(record.get("Course_Name"));
+                cor.setSubject(record.get("Subject"));
+                courses.add(cor);
             }
-            parser.close();
-        } catch (IOException e) {
-            System.out.println("Failed to load class data");
-            e.printStackTrace();
         }
+        parser.close();    
     }
 
     /** Creates copy of courses with unique section Numbers

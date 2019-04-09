@@ -139,7 +139,7 @@ public class CourseInfo {
     }
 
     public boolean isFull () {
-        return enrolled >= capacity;
+        return this.enrolled >= this.capacity;
     }
 
     /**

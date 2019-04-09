@@ -51,8 +51,9 @@ public class CourseInfoTest {
     @Test
     public void testIsFull() {
         CourseInfo course = new CourseInfo();
-        assertFalse(course.isFull());
         course.setCapacity(10);
+        assertFalse(course.isFull());
+        
         course.setEnrolled(10);
         assertTrue(course.isFull());
     }
@@ -66,13 +67,16 @@ public class CourseInfoTest {
         course.setSubject("Subject");
         course.setDayTime("0:00 - 0:00 D");
         course.setRoomNumber(1234);
-        String expected = "Course Number: XXX1234" +
+        String expected = 
+                "Course Number: XXX1234" +
                 "\nSection Number: 0" +
                 "\nCourse Name: Course Name" +
                 "\nSubject: Subject" +
                 "\nTime/Day: 0:00 - 0:00 D" +
-                "\nRoom Number: 1234\n";
+                "\nRoom Number: 1234" + 
+                "\nCapcacity: 0" +
+                "\nEnrolled: 0" +
+                "\n";
         assertEquals(expected, course.toString());
     }
-
 }
