@@ -51,12 +51,11 @@ public class CourseInfoTest {
     @Test
     public void testIsFull() {
         CourseInfo course = new CourseInfo();
-        course.setFull(true);
-        assertTrue(course.isFull());
-        course.setFull(false);
         assertFalse(course.isFull());
+        course.setCapacity(10);
+        course.setEnrolled(10);
+        assertTrue(course.isFull());
     }
-
 
     @Test
     public void testToString()

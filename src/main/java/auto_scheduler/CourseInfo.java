@@ -138,6 +138,10 @@ public class CourseInfo {
         this.capacity = capacity;
     }
 
+    public boolean isFull () {
+        return enrolled >= capacity;
+    }
+
     /**
      * Overrides toString
      * @return String with courseNumber, sectionNumber, courseName, subject , timeDay , roomNumber

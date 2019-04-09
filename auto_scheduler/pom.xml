@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -9,11 +9,11 @@
     <artifactId>roundrock1</artifactId>
     <version>1.0</version>
   </parent>
-  
+
   <groupId>org.txstate.auto_scheduler</groupId>
   <artifactId>auto_scheduler</artifactId>
   <version>1.0</version>
- 
+
   <name>auto_scheduler</name>
   <!-- FIXME change it to the project's website -->
   <url>https://github.com/samaniehsan/auto-scheduler</url>
@@ -31,12 +31,23 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>java-hamcrest</artifactId>
+      <version>2.0.0.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-csv</artifactId>
+      <version>1.4</version>
+    </dependency>
   </dependencies>
 
   <build>
     <sourceDirectory>../src/main/java</sourceDirectory>
-	  <testSourceDirectory>../src/test/java/auto_scheduler</testSourceDirectory>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <testSourceDirectory>../src/test/java/auto_scheduler</testSourceDirectory>
+    <pluginManagement>      <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
@@ -51,9 +62,11 @@
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
-		  <configuration>
-			<includes><include>**/auto_scheduler/**</include></includes>
-		  </configuration>
+          <configuration>
+            <includes>
+              <include>**/auto_scheduler/*.java</include>
+            </includes>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>

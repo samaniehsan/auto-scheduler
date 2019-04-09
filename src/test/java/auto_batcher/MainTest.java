@@ -16,14 +16,14 @@ public class MainTest
     @Test
     public void shouldAnswerWithTrue()
     {
-		Main.main(new String []);
+		Main.main(new String [0]);
         assertTrue( true );
     }
 
     @Test
     public void shouldAnswerWithFalse()
     {
-		Main.main(new String []);
+		Main.main(new String [0]);
         assertFalse( "Should not Fail", false );
     }
 }
