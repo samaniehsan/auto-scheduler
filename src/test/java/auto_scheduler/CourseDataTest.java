@@ -7,15 +7,19 @@ import org.hamcrest.collection.IsEmptyCollection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.File;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
 public class CourseDataTest {
 
-
+    /// Temporarily commented out. the data under testdata can not be found.
     // @Test
     // public void loadData() {
-    //     URL url = getClass().getResource("/testdata/test.csv");
+    //     URL url = getClass().getResource("testdata/test.csv");
+
+    //     ClassLoader cl = getClass().getClassLoader();
+    //     File file = new File(url.getFile());
     //     String fileName = url.getFile();
     //     System.out.println("fileName");
     //     try {

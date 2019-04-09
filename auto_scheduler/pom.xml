@@ -47,6 +47,12 @@
   <build>
     <sourceDirectory>../src/main/java</sourceDirectory>
     <testSourceDirectory>../src/test/java/auto_scheduler</testSourceDirectory>
+    <resources>
+        <resource>
+            <directory>${basedir}/src/main/resources-dev</directory>
+        </resource>
+    </resources>
+
     <pluginManagement>      <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
@@ -80,7 +86,7 @@
             <archive>
               <manifest>
                 <addClasspath>true</addClasspath>
-                <mainClass>org.txstate.auto_scheduler.App</mainClass>
+                <mainClass>org.txstate.auto_scheduler.Main</mainClass>
               </manifest>
             </archive>
           </configuration>
