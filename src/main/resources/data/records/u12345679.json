@@ -4,5 +4,6 @@
     "lastName": "Lewis",
     "dateOfBirth": "1988-01-02",
     "studentId": "U12345679",
-    "year": 3
+    "year": 3,
+    "major": "computer_science"
 }
