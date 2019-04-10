@@ -4,5 +4,6 @@
     "lastName": "Garcia",
     "dateOfBirth": "1989-01-02",
     "studentId": "P12345679",
-    "year": 2
+    "year": 2,
+    "major": "computer_science"
 }
