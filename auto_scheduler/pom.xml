@@ -49,11 +49,11 @@
     <testSourceDirectory>../src/test/java/auto_scheduler</testSourceDirectory>
     <resources>
         <resource>
-            <directory>${basedir}/src/main/resources-dev</directory>
+            <directory>../src/main/resources</directory>
         </resource>
     </resources>
 
-    <pluginManagement>      <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <pluginManagement>  
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
@@ -84,12 +84,43 @@
           <version>3.0.2</version>
           <configuration>
             <archive>
+              <manifestEntries>
+                  <Class-Path>data/</Class-Path>
+              </manifestEntries>
               <manifest>
                 <addClasspath>true</addClasspath>
                 <mainClass>org.txstate.auto_scheduler.Main</mainClass>
               </manifest>
             </archive>
           </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>copy</id>
+              <phase>package</phase>
+              <goals>
+                <goal>copy</goal>
+              </goals>
+              <configuration>
+                <artifactItems>
+                  <artifactItem>
+                    <groupId>[groupId]</groupId>
+                    <artifactId>[artifactId ]</artifactId>
+                    <version>[version ]</version>
+                    <type>[packaging ]</type>
+                    <classifier>[classifier-optional] </classifier>
+                    <overWrite>true</overWrite>
+                    <outputDirectory>[ output directory ]</outputDirectory>
+                    <destFileName>[ filename ]</destFileName>
+                  </artifactItem>
+                </artifactItems>
+                <!-- other configurations here -->
+              </configuration>
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>

@@ -1,21 +1,63 @@
 package org.txstate.auto_scheduler;
 
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.io.File;
+import java.io.*;
+
 public class Main {
 
 	public Main () {
 	}
-	
+
+	public void test() throws FileNotFoundException, IOException {
+		System.out.println("Ehsan Current Working Directory = " +
+        System.getProperty("user.dir"));
+		URL url = getClass().getResource("/data/records/a12345679.json");
+
+		if(url == null ) {
+			System.out.println("url is null");
+		}
+
+		ClassLoader cl = getClass().getClassLoader();
+        File file = new File(url.getFile());
+		String fileName = url.getFile();
+		
+		System.out.println("fileName:" + fileName);
+
+
+		FileInputStream fis = new FileInputStream(file);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(fis));
+	 
+		System.out.println("Reading File line by line using BufferedReader");
+	 
+		String line = reader.readLine();
+		while(line != null){
+			System.out.println(line);
+			line = reader.readLine();
+		}          
+
+	}
 	public static void main(String[] args) {
 		
-		OperationContextParser parser = new OperationContextParser();
-		OperationContext opContext = parser.getOperationContext(args);
-		
-		if(opContext == null)
-			printUsage();
-		else {
-			OperationServiceFactory factory = new OperationServiceFactory();
-			factory.get(opContext).execute(opContext);
+		try {
+			Main main = new Main();
+			main.test();
+	
+			// OperationContextParser parser = new OperationContextParser();
+			// OperationContext opContext = parser.getOperationContext(args);
+			
+			// if(opContext == null)
+			// 	printUsage();
+			// else {
+			// 	OperationServiceFactory factory = new OperationServiceFactory();
+			// 	factory.get(opContext).execute(opContext);
+			// }
+		} catch(Exception e) {
+			e.printStackTrace();
 		}
+		
 	}	
 	
 	

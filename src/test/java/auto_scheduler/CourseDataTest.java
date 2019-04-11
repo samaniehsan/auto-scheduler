@@ -13,9 +13,11 @@ import static org.junit.Assert.*;
 
 public class CourseDataTest {
 
-    /// Temporarily commented out. the data under testdata can not be found.
     // @Test
     // public void loadData() {
+    //     System.out.println("Ehsan Current Working Directory = " +
+    //     System.getProperty("user.dir"));
+    //     URL url = getClass().getResource
     //     URL url = getClass().getResource("testdata/test.csv");
 
     //     ClassLoader cl = getClass().getClassLoader();
