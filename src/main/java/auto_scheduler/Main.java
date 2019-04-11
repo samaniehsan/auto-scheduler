@@ -5,12 +5,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.File;
 import java.io.*;
+import org.apache.commons.csv.CSVFormat;
 
 public class Main {
 
 	public Main () {
 	}
 
+	private void test2() {
+		CSVFormat format = CSVFormat.RFC4180.withHeader().withDelimiter(',');
+	}
 	public void test() throws FileNotFoundException, IOException {
 		System.out.println("Ehsan Current Working Directory = " +
         System.getProperty("user.dir"));
@@ -43,7 +47,8 @@ public class Main {
 		
 		try {
 			Main main = new Main();
-			main.test();
+			//main.test();
+			main.test2();
 	
 			// OperationContextParser parser = new OperationContextParser();
 			// OperationContext opContext = parser.getOperationContext(args);
