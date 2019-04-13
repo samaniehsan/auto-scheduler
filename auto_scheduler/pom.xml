@@ -29,27 +29,34 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
-      <scope>test</scope>
+      <scope>test</scope>	
     </dependency>
     <dependency>
       <groupId>org.hamcrest</groupId>
       <artifactId>java-hamcrest</artifactId>
       <version>2.0.0.0</version>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-csv</artifactId>
       <version>1.4</version>
     </dependency>
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20180813</version>
+    </dependency>
   </dependencies>
 
   <build>
+    <defaultGoal>install</defaultGoal>
     <sourceDirectory>../src/main/java</sourceDirectory>
     <testSourceDirectory>../src/test/java/auto_scheduler</testSourceDirectory>
+    <finalName>${project.artifactId}-${project.version}</finalName>
+
     <resources>
         <resource>
-            <directory>${basedir}/src/main/resources-dev</directory>
+            <directory>../src/main/resources</directory>
         </resource>
     </resources>
 
@@ -64,6 +71,24 @@
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
+          <executions>
+            <execution>
+              <id>copy-resources</id>
+              <!-- here the phase you need -->
+              <phase>validate</phase>
+              <goals>
+                <goal>copy-resources</goal>
+              </goals>
+              <configuration>
+                <outputDirectory>${basedir}/target/resources</outputDirectory>
+                <resources>          
+                  <resource>
+                    <directory>${basedir}/../src/main/resources</directory>
+                  </resource>
+                </resources>              
+              </configuration>            
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
@@ -87,6 +112,7 @@
               <manifest>
                 <addClasspath>true</addClasspath>
                 <mainClass>org.txstate.auto_scheduler.Main</mainClass>
+                <classpathPrefix>dependency</classpathPrefix>
               </manifest>
             </archive>
           </configuration>
@@ -108,7 +134,43 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>  
+          <executions>
+            <execution>
+              <id>copy-installed</id>
+              <phase>install</phase>
+              <goals>
+                <goal>copy-dependencies</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+      <artifactId>maven-clean-plugin</artifactId>
+      </plugin>
+      <plugin>
+      <artifactId>maven-resources-plugin</artifactId>
+      </plugin>
+      <plugin>
+      <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+      <plugin>
+      <artifactId>maven-surefire-plugin</artifactId>
+      </plugin>
+      <plugin>
+      <artifactId>maven-dependency-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+      </plugin>
+    </plugins>
   </build>
 </project>
