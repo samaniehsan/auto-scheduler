@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -9,7 +9,7 @@
     <artifactId>roundrock1</artifactId>
     <version>1.0</version>
   </parent>
-  
+
   <groupId>org.txstate.auto_batcher</groupId>
   <artifactId>auto_batcher</artifactId>
   <version>1.0</version>
@@ -31,12 +31,19 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20180813</version>
+    </dependency>
   </dependencies>
 
   <build>
+    <defaultGoal>install</defaultGoal>
     <sourceDirectory>../src/main/java</sourceDirectory>
     <testSourceDirectory>../src/test/java/auto_batcher</testSourceDirectory>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <finalName>${project.artifactId}-${project.version}</finalName>
+    <pluginManagement>      <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
@@ -47,13 +54,33 @@
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
+          <executions>
+            <execution>
+              <id>copy-resources</id>
+              <!-- here the phase you need -->
+              <phase>validate</phase>
+              <goals>
+                <goal>copy-resources</goal>
+              </goals>
+              <configuration>
+                <outputDirectory>${basedir}/target/resources</outputDirectory>
+                <resources>          
+                  <resource>
+                    <directory>${basedir}/../src/main/resources</directory>
+                  </resource>
+                </resources>              
+              </configuration>            
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
-		  <configuration>
-			<includes><include>**/auto_batcher/*.java</include></includes>
-		  </configuration>
+          <configuration>
+            <includes>
+              <include>**/auto_batcher/*.java</include>
+            </includes>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
@@ -68,6 +95,7 @@
               <manifest>
                 <addClasspath>true</addClasspath>
                 <mainClass>org.txstate.auto_batcher.Main</mainClass>
+                <classpathPrefix>dependency</classpathPrefix>
               </manifest>
             </archive>
           </configuration>
@@ -89,7 +117,43 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>  
+          <executions>
+            <execution>
+              <id>copy-installed</id>
+              <phase>install</phase>
+              <goals>
+                <goal>copy-dependencies</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-dependency-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+      </plugin>
+    </plugins>
   </build>
 </project>
