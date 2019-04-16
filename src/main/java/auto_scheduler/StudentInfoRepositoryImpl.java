@@ -34,41 +34,41 @@ public class StudentInfoRepositoryImpl implements StudentInfoRepository{
     public StudentInfo getInfo(String studentId) {
 
         String recordsFolderRelativePath = this.pathProvider.getRecords();
-        JSONParser parser = new JSONParser();
-        File folder = new File(recordsFolderRelativePath);
-        File[] listOfFiles = folder.listFiles();
+        String filePath = recordsFolderRelativePath + "/"+ studentId + ".json";
         
-        for (File file : listOfFiles) {
-            System.out.println("file:" + file.getName());
-            if ((file.isFile()) && (file.getName().contains("json"))) {
-                try {
-                    Object obj = parser.parse(new FileReader(file.getAbsoluteFile()));
-                    
-                    if(obj != null) {
-                        JSONObject jsonObject = (JSONObject) obj;
-                        String Id = (String) jsonObject.get("studentId");
-                        
-                        System.out.println("studentid" + Id);
-                        StudentInfo student = new StudentInfo();
-                        if (Id.equalsIgnoreCase(studentId)) {
-                            student.setStudentId(Id);
-                            student.setNameFirst((String) jsonObject.get("firstName"));
-                            student.setLastName((String) jsonObject.get("lastName"));
-                            String date = (String) jsonObject.get("dateOfBirth");
-                            student.setDateOfBirth(new SimpleDateFormat("yyyy-MM-dd").parse(date));
-                            return student;
-                        }
-                    }
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                } catch (java.text.ParseException e) {
-                    e.printStackTrace();
+        
+        File file = new File(filePath);
+        if(!file.exists()) {
+            System.err.println("could not find bio file for studentid:"+ studentId);
+            return null;
+        }
+        try {
+            JSONParser parser = new JSONParser();
+            Object obj = parser.parse(new FileReader(file.getAbsoluteFile()));
+            
+            if(obj != null) {
+                JSONObject jsonObject = (JSONObject) obj;
+                String Id = (String) jsonObject.get("studentId");
+                
+                System.out.println("studentid" + Id);
+                StudentInfo student = new StudentInfo();
+                if (Id.equalsIgnoreCase(studentId)) {
+                    student.setStudentId(Id);
+                    student.setNameFirst((String) jsonObject.get("firstName"));
+                    student.setLastName((String) jsonObject.get("lastName"));
+                    String date = (String) jsonObject.get("dateOfBirth");
+                    student.setDateOfBirth(new SimpleDateFormat("yyyy-MM-dd").parse(date));
+                    return student;
                 }
             }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        } catch (java.text.ParseException e) {
+            e.printStackTrace();
         }
         return null;
     }
