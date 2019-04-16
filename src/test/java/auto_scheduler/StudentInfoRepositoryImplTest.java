@@ -18,7 +18,6 @@ public class StudentInfoRepositoryImplTest {
        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
        assertEquals("Davis", st.getLastName());
        assertEquals("James", st.getNameFirst());
-       System.out.println("stdudent id" + st.getStudentId());
        assertTrue("d12345679".equalsIgnoreCase(st.getStudentId()));
        assertEquals("1990-05-06", dateFormat.format(st.getDateOfBirth()));
     }

@@ -49,8 +49,7 @@ public class StudentInfoRepositoryImpl implements StudentInfoRepository{
             if(obj != null) {
                 JSONObject jsonObject = (JSONObject) obj;
                 String Id = (String) jsonObject.get("studentId");
-                
-                System.out.println("studentid" + Id);
+
                 StudentInfo student = new StudentInfo();
                 if (Id.equalsIgnoreCase(studentId)) {
                     student.setStudentId(Id);
