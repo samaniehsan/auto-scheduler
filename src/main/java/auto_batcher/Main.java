@@ -4,6 +4,8 @@ import java.util.*;
 import java.io.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -17,53 +19,58 @@ public class Main
     @SuppressWarnings("unchecked")
     public static void main(String[] args)
     {
-    	JSONParser jsonParser = new JSONParser();
+		try {
+			runParser();
+		} catch(Exception e) {
+			e.printStackTrace(System.err);
+		}
+	}
+	
+	private static void runParser() throws ParseException {
+		JSONParser jsonParser = new JSONParser();
     	JSONArray allStudentsList;
     	String fileName;
-    	File folder = new File("/auto-scheduler/src/main/resources/data/records");
-    	File[] listOfFiles = folder.listFiles();
+    	File folder = new File("resources/data/records");
+		if(folder == null ) {
+			return;
+		}
 
+		File[] listOfFiles = folder.listFiles(new FilenameFilter() {
+			public boolean accept(File dir, String name) {
+				return name.toLowerCase().endsWith(".json");
+			}
+		});
+
+		if(listOfFiles == null) {
+			return;
+		}
 
     	for (int i = 0; i < listOfFiles.length; i++) {
 
         	if (listOfFiles[i].isFile()) {
-	            fileName = listOfFiles[i].getName();
-	            // String basename = FilenameUtils.getBaseName(fileName);
+				fileName = listOfFiles[i].getName();
+				
+				try (FileReader reader = new FileReader(listOfFiles[i]))
+				{
+					Object obj = jsonParser.parse(reader);
+		 
+					JSONObject studentBio = (JSONObject) obj;
+					parseStudentObject(studentBio);
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
         	}
 
-	        try (FileReader reader = new FileReader(listOfFiles[i]))
-	        {
-	            Object obj = jsonParser.parse(reader);
-	 
-	            JSONArray studentList = (JSONArray) obj;
-	            // System.out.println(studentList);
-	             
-	            for(JSONObject student : studentList){
-
-	            	parseStudentObject(student, fileName);
-	            	
-	            	//add to allStudentsList
-
-	            }
-	 
-	        } catch (FileNotFoundException e) {
-	            e.printStackTrace();
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        } catch (ParseException e) {
-	            e.printStackTrace();
-	        }
-
-
         }
-
-    }
+	}
  
-    private static void parseStudentObject(JSONObject student, String fileName)
+    private static void parseStudentObject(JSONObject student)
     {
-        JSONObject studentObject = (JSONObject) student.get(fileName);
-         //test to see if it 
-        String year = (String) studentObject.get("year");   
+        Long year = (Long) student.get("year");   
         System.out.println(year);
          
     }
