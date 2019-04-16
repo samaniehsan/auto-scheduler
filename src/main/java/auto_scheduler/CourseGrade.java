@@ -1,7 +1,7 @@
 package org.txstate.auto_scheduler;
 
 public enum CourseGrade {
-	Incomplete,
+	I,
 	F,
 	D,
 	C,
