@@ -37,20 +37,27 @@ public class StudentInfoRepositoryImpl implements StudentInfoRepository{
         JSONParser parser = new JSONParser();
         File folder = new File(recordsFolderRelativePath);
         File[] listOfFiles = folder.listFiles();
+        
         for (File file : listOfFiles) {
+            System.out.println("file:" + file.getName());
             if ((file.isFile()) && (file.getName().contains("json"))) {
                 try {
                     Object obj = parser.parse(new FileReader(file.getAbsoluteFile()));
-                    JSONObject jsonObject = (JSONObject) obj;
-                    String ID = (String) jsonObject.get("studentId");
-                    StudentInfo student = new StudentInfo();
-                    if (ID.equals(studentId)) {
-                        student.setNameFirst((String) jsonObject.get("firstName"));
-                        student.setLastName((String) jsonObject.get("lastName"));
-                        String date = (String) jsonObject.get("dateOfBirth");
-                        student.setDateOfBirth(new SimpleDateFormat("yyyy-MM-dd").parse(date));
-                        student.setStudentId((String) jsonObject.get("studentID"));
-                        return student;
+                    
+                    if(obj != null) {
+                        JSONObject jsonObject = (JSONObject) obj;
+                        String Id = (String) jsonObject.get("studentId");
+                        
+                        System.out.println("studentid" + Id);
+                        StudentInfo student = new StudentInfo();
+                        if (Id.equalsIgnoreCase(studentId)) {
+                            student.setStudentId(Id);
+                            student.setNameFirst((String) jsonObject.get("firstName"));
+                            student.setLastName((String) jsonObject.get("lastName"));
+                            String date = (String) jsonObject.get("dateOfBirth");
+                            student.setDateOfBirth(new SimpleDateFormat("yyyy-MM-dd").parse(date));
+                            return student;
+                        }
                     }
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
