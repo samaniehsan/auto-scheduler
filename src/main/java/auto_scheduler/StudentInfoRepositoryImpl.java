@@ -57,6 +57,8 @@ public class StudentInfoRepositoryImpl implements StudentInfoRepository{
                     student.setLastName((String) jsonObject.get("lastName"));
                     String date = (String) jsonObject.get("dateOfBirth");
                     student.setDateOfBirth(new SimpleDateFormat("yyyy-MM-dd").parse(date));
+                    student.setYear(((Long) jsonObject.get("year")).intValue());
+                    student.setMajor((String) jsonObject.get("major"));
                     return student;
                 }
             }
