@@ -7,7 +7,9 @@ public class StudentInfo {
     private String firstName;
     private String lastName;
     private Date dateOfBirth;
-    private String studentId;
+	private String studentId;
+	private int year;
+	private String major;
     
 	public String getNameFirst() {
 		return this.firstName;
@@ -21,6 +23,14 @@ public class StudentInfo {
 	public String getStudentId() {
 		return this.studentId;
 	}
+
+	public int getYear() {
+		return this.year;
+	}
+
+	public String getMajor() {
+		return this.major;
+	}
 	
 	public void setNameFirst(String firstName) {
 		this.firstName = firstName;
@@ -33,5 +43,11 @@ public class StudentInfo {
 	}
 	public void setStudentId(String studentId) {
 		this.studentId = studentId;
+	}	
+	public void setYear(int year) {
+		this.year = year;
+	}
+	public void setMajor(String major) {
+		this.major = major;
 	}
 }

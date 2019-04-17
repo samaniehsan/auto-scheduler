@@ -20,5 +20,7 @@ public class StudentInfoRepositoryImplTest {
        assertEquals("James", st.getNameFirst());
        assertTrue("d12345679".equalsIgnoreCase(st.getStudentId()));
        assertEquals("1990-05-06", dateFormat.format(st.getDateOfBirth()));
+       assertEquals((int)1, st.getYear());
+       assertEquals("computer_science", st.getMajor());
     }
 }
