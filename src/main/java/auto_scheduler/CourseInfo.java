@@ -1,6 +1,6 @@
 package org.txstate.auto_scheduler;
 
-**
+/**
  * Represents a course for the school
  * @author Barry Rominger
  */
@@ -14,15 +14,6 @@ public class CourseInfo {
     private int enrolled;
     private int roomNumber;
     private int sectionNumber;
-    private String prereq;
-
-    public String getPrereq() {
-        return prereq;
-    }
-
-    public void setPrereq(String prereq) {
-        this.prereq = prereq;
-    }
 
     /**
      * Gets the section number

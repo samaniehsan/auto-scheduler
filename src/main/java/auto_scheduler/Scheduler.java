@@ -17,11 +17,27 @@ public class Scheduler implements ScheduleAction {
 	{
 		String studentId = context.getStudentId();
 		StudentInfoRepositoryImpl studentRepo = new StudentInfoRepositoryImpl(this.pathProvider);
+		StudentInfo studentInfo = studentRepo.getInfo(studentId);
+
+		if(studentInfo == null) {
+			throw new StudentNotFoundException(studentId, String.format("Student %s Not Found", studentId));	
+		}
+		return implementSchedule(studentInfo, studentId);
+	}
+
+	private ScheduleSet implementSchedule(
+		StudentInfo studentInfo,
+		String studentId) throws FileNotFoundException, IOException {
 
 		StudentRecordRepositoryImpl gradeRepo = new StudentRecordRepositoryImpl(this.pathProvider);
 		Collection<StudentRecord> records = gradeRepo.get(studentId);
-		
 		printGrades(records);
+		
+		DegreePlanRespositoryImpl degreePlanRespository = new DegreePlanRespositoryImpl(this.pathProvider);
+		Collection<CurriculumCourse> curriculumCourses = degreePlanRespository.get(studentInfo.getMajor());
+		
+		printDegreePlan(curriculumCourses);
+		
 		return null;
 	}
 
@@ -37,4 +53,21 @@ public class Scheduler implements ScheduleAction {
 		}
 		System.out.println("******************");
 	}
+
+	private void printDegreePlan(Iterable<CurriculumCourse> majorCourses) {
+		System.out.println("******Courses For Major******");
+		if(majorCourses != null ) {
+			for(CurriculumCourse course: majorCourses) {
+				String courseNumber = course.getCourseNumber();
+				String courseName = course.getCourseName();
+				String preReq = course.getPreRequisite();
+				
+				System.out.format("courseNumber %s, courseName:%s, preReq:%s\n",
+				courseNumber, 
+				courseName,
+				preReq);
+			}
+		}
+		System.out.println("******************");
+	}	
 }
