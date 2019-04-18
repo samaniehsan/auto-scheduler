@@ -36,8 +36,13 @@ public class Scheduler implements ScheduleAction {
 		DegreePlanRespositoryImpl degreePlanRespository = new DegreePlanRespositoryImpl(this.pathProvider);
 		Collection<CurriculumCourse> curriculumCourses = degreePlanRespository.get(studentInfo.getMajor());
 		
-		printDegreePlan(curriculumCourses);
+		printDegreePlan("Courses For Major", curriculumCourses);
 		
+		CandidateCourseService candiateCourseService = new CandidateCourseServiceImpl();
+		Collection<CurriculumCourse>  candidateCourses = candiateCourseService.buildList(records, curriculumCourses);
+		printDegreePlan("Candidate Courses", candidateCourses);
+		
+
 		return null;
 	}
 
@@ -54,8 +59,8 @@ public class Scheduler implements ScheduleAction {
 		System.out.println("******************");
 	}
 
-	private void printDegreePlan(Iterable<CurriculumCourse> majorCourses) {
-		System.out.println("******Courses For Major******");
+	private void printDegreePlan(String tagName, Iterable<CurriculumCourse> majorCourses) {
+		System.out.println("******"+ tagName  + "******");
 		if(majorCourses != null ) {
 			for(CurriculumCourse course: majorCourses) {
 				String courseNumber = course.getCourseNumber();
@@ -69,5 +74,5 @@ public class Scheduler implements ScheduleAction {
 			}
 		}
 		System.out.println("******************");
-	}	
+	}
 }
