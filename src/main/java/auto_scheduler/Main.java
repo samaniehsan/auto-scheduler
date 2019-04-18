@@ -16,7 +16,24 @@ public class Main {
 				OperationServiceFactory factory = new OperationServiceFactory();
 				factory.get(opContext).execute(opContext);
 			}
-		} catch( Exception e) {
+		} catch (StudentNotFoundException e) {
+			e.printStackTrace(System.err);
+			System.err.println("----");
+			System.err.println(
+				String.format(
+					"Could not Find Student:%s",
+					e.getStudentId())
+				);
+		} catch (InvalidMajorException e) {
+			e.printStackTrace(System.err);
+			System.err.println("----");
+			System.err.println(
+				String.format(
+					"Could not Find Major:%s",
+					e.getMajor())
+				);
+		}
+		catch( Exception e) {
 			e.printStackTrace(System.err);
 		}
 	}

@@ -10,10 +10,9 @@ import java.util.Collection;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
-import auto_scheduler.CourseInfo;
 
 
-public class DegreePlanRespositoryImpl {
+public class DegreePlanRespositoryImpl implements DegreePlanRespository {
 
     ResourcePathProvider pathProvider;
 
@@ -21,41 +20,45 @@ public class DegreePlanRespositoryImpl {
         this.pathProvider = pathProvider;
     }
 
-    public Collection<CourseInfo> get(String major) throws FileNotFoundException,  IOException {
+    public Collection<CurriculumCourse> get(String major) throws FileNotFoundException,  IOException {
         return getCourses(getFilePath(major), major);
-    }
+    }    
 
-    private String getFilePath(String major) {
-        String classesFolderRelativePath = this.pathProvider.getRecords();
-        String classesCSVPath = classesFolderRelativePath + "/" + major + ".csv";
-        return classesCSVPath;
-    }
+	private String getFilePath(String major) {
+		String recordsFolderRelativePath = this.pathProvider.getClasses();
+		String curriculumPath = recordsFolderRelativePath + "/" + major + ".csv";
+		return curriculumPath;
+	}	
 
-    private Collection<CourseInfo> getCourses(String filePath, String major) throws FileNotFoundException,  IOException {
-        ArrayList<CourseInfo> list = new ArrayList<CourseInfo>();
-
+    private Collection<CurriculumCourse> getCourses(String filePath, String major) throws FileNotFoundException,  IOException {
         File file = new File(filePath);
 
         if(file.exists()) {
+            ArrayList<CurriculumCourse> list = new ArrayList<CurriculumCourse>();
             Reader in = new FileReader(filePath);
             Iterable<CSVRecord> records = CSVFormat.RFC4180.withFirstRecordAsHeader().parse(in);
             for (CSVRecord record : records) {
 
                 String courseNumber = record.get("Course_Number");
                 String courseName = record.get("Course_Name");
-                String subject = record.get("Subject");
                 String prereq = record.get("Prereq");
 
                 if(!courseNumber.isEmpty()) {
-                    CourseInfo course = new CourseInfo();
+                    CurriculumCourse course = new CurriculumCourse();
                     course.setCourseNumber(courseNumber);
                     course.setCourseName(courseName);
-                    course.setSubject(subject);
-                    course.setPrereq(prereq);
+                    course.setPreRequisite(prereq);
                     list.add(course);
                 }
             }
+            return list;
         }
-        return list;
+        String msg = String.format(
+                "Did not find major with file name %s", 
+                filePath);
+        throw new InvalidMajorException(
+            major,
+            msg
+        );
     }
 }
