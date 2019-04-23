@@ -18,6 +18,13 @@ public class Main {
 	public static void main(String[] args) {
 		try {
 
+			MultiStudentScheduleInvoker multiStudentInvoker = null;
+			if(args !=null && args.length > 0 ) {
+				String autoSchedulerPath = args[0];
+				StudentScheduleInvoker invoker = new StudentScheduleInvoker(autoSchedulerPath);
+				multiStudentInvoker = new MultiStudentScheduleInvoker(invoker);
+			}
+
 			String newFile = "resources/data/records";
 			ArrayList<Student> groupedStudents = new ArrayList<Student>();
 
@@ -29,6 +36,10 @@ public class Main {
 				StudentGrouper studenGrouper = new StudentGrouper(studentInfoRepo.getRepo());
 				studenGrouper.randomGrouping();
 				groupedStudents = studenGrouper.getStudentList();
+
+				if(multiStudentInvoker != null ) { 
+					multiStudentInvoker.scheduleAll(groupedStudents);
+				}
 			}
 
 		} catch (Exception e) {
