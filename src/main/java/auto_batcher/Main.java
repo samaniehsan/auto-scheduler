@@ -14,29 +14,25 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class Main
-{
-    @SuppressWarnings("unchecked")
-    public static void main(String[] args)
-    {
+public class Main {
+	public static void main(String[] args) {
 		try {
 
 			String newFile = "resources/data/records";
 			ArrayList<Student> groupedStudents = new ArrayList<Student>();
 
 			Invoker invoker = new Invoker(newFile);
-			if((invoker.runParser()).length != 0){
-				StudentInfoRepo studentInfoRepo = new StudentInfoRepo(invoker.runParser());
+			File[] files = invoker.runParser();
+			if (files !=null && files.length != 0) {
+				StudentInfoRepo studentInfoRepo = new StudentInfoRepo(files);
 				studentInfoRepo.obtainJSON();
 				StudentGrouper studenGrouper = new StudentGrouper(studentInfoRepo.getRepo());
 				studenGrouper.randomGrouping();
 				groupedStudents = studenGrouper.getStudentList();
 			}
 
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace(System.err);
 		}
 	}
- 
 }
-

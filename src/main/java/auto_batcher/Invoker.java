@@ -14,25 +14,23 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class Invoker
-{
+public class Invoker {
 	private String newFile;
 
-	public Invoker(String newFile){
+	public Invoker(String newFile) {
 		this.newFile = newFile;
 	}
 
 	public File[] runParser() throws ParseException {
-
-    	File folder = new File(newFile);
-		File[] listOfFiles = folder.listFiles(new FilenameFilter() {
-			public boolean accept(File dir, String name) {
-				return name.toLowerCase().endsWith(".json");
-			}
-		});
-		return listOfFiles;
-
-    }
-
+		File folder = new File(newFile);
+		if(!folder.exists()) {
+			File[] listOfFiles = folder.listFiles(new FilenameFilter() {
+				public boolean accept(File dir, String name) {
+					return name.toLowerCase().endsWith(".json");
+				}
+			});
+			return listOfFiles;
+		}
+		return null;
+	}
 }
-
