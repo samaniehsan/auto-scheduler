@@ -1,23 +1,23 @@
 Course_Number,Course_Name,Subject,Prereq
-COMM1310,Fundamentals_of_Human_Communication,Communication,N/A
-ENG1310,College_Writing_1,English,N/A
+COMM1310,Fundamentals_of_Human_Communication,Communication,
+ENG1310,College_Writing_1,English,
 ENG1320,College_Writing_2,English,ENG1310
-HIST1310,History_of_the_United_States_to_1877,American_History,N/A
-POSI2310,Principles_of_American_Government,Government,N/A
-PHIL1305,Philosophy_and_Critical_Thinking,Philosophy,N/A
-PSY1300,Introduction_to_Psychology,Psychology,N/A
-SOCI1310,Introduction_to_Sociology,Social_and_Behavioral_Sciences,N/A
-HIST1320,History_of_the_United_States_1877_to_Date,American_History,N/A
-POSI2320,Functions_of_American_Government,Government,N/A
-CJ3347,Statistics_For_Criminal_Justice,Criminal_Justice,N/A
-MATH2328,Elementary_Statistics,Mathematics,N/A
+HIST1310,History_of_the_United_States_to_1877,American_History,
+POSI2310,Principles_of_American_Government,Government,
+PHIL1305,Philosophy_and_Critical_Thinking,Philosophy,
+PSY1300,Introduction_to_Psychology,Psychology,
+SOCI1310,Introduction_to_Sociology,Social_and_Behavioral_Sciences,
+HIST1320,History_of_the_United_States_1877_to_Date,American_History,
+POSI2320,Functions_of_American_Government,Government,
+CJ3347,Statistics_For_Criminal_Justice,Criminal_Justice,
+MATH2328,Elementary_Statistics,Mathematics,
 SOCI3307,Statistics_for_the_Behavioral_Sciences,Social_and_Behavioral_Sciences,MATH2328
 PSY2301,Introduction_to_Statistics,Psychology,MATH2328
-ART2313,Introduction_to_Fine_Arts,Creative_Arts,N/A
+ART2313,Introduction_to_Fine_Arts,Creative_Arts,
 ENG2330,World_Literature,English,ENG1320
 ENG2360,US_Literature,English,ENG1320
-CS1308,Computer_Literacy_and_the_Internet,Computer_Science,N/A
-CJ1310,Introduction_to_Criminal_Justice,Criminal_Justice,N/A
+CS1308,Computer_Literacy_and_the_Internet,Computer_Science,
+CJ1310,Introduction_to_Criminal_Justice,Criminal_Justice,
 CJ2310,Police_Systems_and_Practices,Criminal_Justice,CJ1310
 CJ2350,The_Courts_and_Criminal_Procedure,Criminal_Justice,CJ1310
 CJ2355,Correctional_Systems_and_Practices,Criminal_Justice,CJ1310
@@ -29,8 +29,7 @@ CJ4310,Special_Problems_in_the_Criminal_Justice_System,Criminal_Justice,CJ2310:C
 CJ4340,Crime_Theory_and_Victimization,Criminal_Justice,CJ1310:CJ3300
 CJ4350,Contemporary_Legal_Issues_in_Law_Enforcement,Criminal_Justice,CJ1310:CJ2310
 CJ4365,Comparative_Criminal_Justice,Criminal_Justice,CJ1310:CJ2310:CJ2355
-CJ3322,Race_Ethnicity_and_Criminal_Justice,Criminal_Justice,N/A
+CJ3322,Race_Ethnicity_and_Criminal_Justice,Criminal_Justice,
 CJ3325,Penology,Criminal_Justice,CJ1310:CJ2355
-
 
 
