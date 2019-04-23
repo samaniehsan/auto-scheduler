@@ -26,7 +26,6 @@ public class Main {
 			}
 
 			String newFile = "resources/data/records";
-			ArrayList<Student> groupedStudents = new ArrayList<Student>();
 
 			Invoker invoker = new Invoker(newFile);
 			File[] files = invoker.runParser();
