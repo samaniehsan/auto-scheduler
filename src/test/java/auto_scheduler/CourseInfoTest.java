@@ -76,6 +76,7 @@ public class CourseInfoTest {
                 "\nRoom Number: 1234" + 
                 "\nCapcacity: 0" +
                 "\nEnrolled: 0" +
+                "\nTimeSlot: 0" +
                 "\n";
         assertEquals(expected, course.toString());
     }
