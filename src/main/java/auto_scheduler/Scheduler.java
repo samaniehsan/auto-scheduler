@@ -8,9 +8,14 @@ import java.util.Collection;
 
 public class Scheduler implements ScheduleAction {
 	ResourcePathProvider pathProvider;
-	
+	boolean readonlyMode = false;
+
 	public Scheduler(ResourcePathProvider pathProvider) {
 		this.pathProvider = pathProvider;
+	}
+	public Scheduler(boolean readonlyMode, ResourcePathProvider pathProvider) {
+		this.pathProvider = pathProvider;
+		this.readonlyMode = readonlyMode;
 	}
 	
 	public ScheduleSet execute(OperationContext context) throws FileNotFoundException, IOException
