@@ -8,4 +8,7 @@ public interface CandidateCourseService {
 	Collection<CurriculumCourse> buildList( 
         Collection<StudentRecord> coursesOnRecord, 
         Collection<CurriculumCourse> degreePlanCourses);
+        
+        Collection<String> getPassedCourses(
+                Collection<StudentRecord> coursesOnRecord);
 }

@@ -31,7 +31,7 @@ public class CandidateCourseServiceImpl implements CandidateCourseService {
         return candidateCourses;
     }
 
-    private Collection<String> getPassedCourses(
+    public Collection<String> getPassedCourses(
         Collection<StudentRecord> coursesOnRecord) {
         
         if(coursesOnRecord == null)
