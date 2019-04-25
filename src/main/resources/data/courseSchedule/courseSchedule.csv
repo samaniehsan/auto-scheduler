@@ -1,237 +1,416 @@
-Course_Number,Section_Number,Course_Name,Time_Day,Room_Number,Capacity,Enrolled
-MATH2471,MATH2471,11000,Calculus_I,12:30 - 1:50 TTh,1001,20,1
-MATH2472,MATH2472,11003,Calculus_II,12:30 - 1:50 MW,1019,20,1
-ENG1310,ENG1310,11006,College_Writing_1,11:00 - 12:20 TTh,1008,20,1
-ENG1320,ENG1320,11009,College_Writing_2,8:00 - 9:20 TTh,1014,20,1
-PHIL1305,PHIL1305,11012,Philosophy_and_Critical_Thinking,8:00 - 9:20 MW,1013,20,1
-COMM1310,COMM1310,11015,Fundamentals_of_Human_Communication,9:30 - 10:50 MW,1018,20,1
-MATH2358,MATH2358,11018,Discrete_Math_1,9:30 - 10:50 MW,1009,20,1
-MATH3398,MATH3398,11021,Discrete_Math_2,9:30 - 10:50 MW,1012,20,1
-PHYS1315,PHYS1315,11023,General_Physics_I,8:00 - 9:20 TTh,1015,20,1
-PHYS1325,PHYS1325,11026,General_Physics_II,11:00 - 12:20 MW,1010,20,1
-PSY1300,PSY1300,11029,Introduction_to_Psychology,2:00 - 3:20 TTh,1005,20,1
-SOCI1310,SOCI1310,11032,Introduction_to_Sociology,11:00 - 12:20 TTh,1005,20,1
-ENG2330,ENG2330,11035,World_Literature,12:30 - 1:50 TTh,1018,20,1
-MATH3305,MATH3305,11038,Introduction_to_Probability_and_Statistics,2:00 - 3:20 MW,1008,20,1
-POSI2310,POSI2310,11040,Principles_of_American_Government,11:00 - 12:20 TTh,1004,20,1
-ART2313,ART2313,11043,Introduction_to_Fine_Arts,9:30 - 10:50 TTh,1004,20,1
-CS3354,CS3354,11046,Object-Oriented_Design_and_Programming,3:30 - 5:00 MW,1008,20,1
-CS2318,CS2318,11048,Assembly_Language,2:00 - 3:20 MW,1010,20,1
-CS4398,CS4398,11051,Software_Engineering_Project,8:00 - 9:20 MW,1009,20,1
-CS1319,CS1319,11053,Fundamentals_of_Computer_Science,3:30 - 5:00 TTh,1010,20,1
-CS1428,CS1428,11056,Foundations_of_Computer_Science_I,2:00 - 3:20 TTh,1000,0,0
-CS2308,CS2308,11059,Foundations_of_Computer_Science_II,8:00 - 9:20 TTh,1006,0,0
-CS2315,CS2315,11062,Computer_Ethics,9:30 - 10:50 TTh,1001,0,0
-CS3339,CS3339,11065,Computer_Architecture,8:00 - 9:20 TTh,1017,0,0
-CS3358,CS3358,11067,Data_Structures_and_Algorithms,9:30 - 10:50 TTh,1003,0,0
-CS3398,CS3398,11069,Software_Engineering,12:30 - 1:50 MW,1002,0,0
-CS4328,CS4328,11071,Operating_Systems,9:30 - 10:50 MW,1008,0,0
-CS4310,CS4310,11073,Computer_Networks,11:00 - 12:20 MW,1008,0,0
-CS4332,CS4332,11075,Introduction_to_Database_Systems,11:00 - 12:20 MW,1002,0,0
-CS4326,CS4326,11077,Human_Factors_of_Computer_Systems,8:00 - 9:20 TTh,1003,0,0
-CS4371,CS4371,11079,Computer_System_Security,11:00 - 12:20 TTh,1018,0,0
-COMM1310,COMM1310,11081,Fundamentals_of_Human_Communication,8:00 - 9:20 TTh,1009,0,0
-ENG1310,ENG1310,11084,College_Writing_1,12:30 - 1:50 MW,1011,0,0
-ENG1320,ENG1320,11087,College_Writing_2,8:00 - 9:20 MW,1002,0,0
-HIST1310,HIST1310,11090,History_of_the_United_States_to_1877,11:00 - 12:20 MW,1014,0,0
-POSI2310,POSI2310,11093,Principles_of_American_Government,11:00 - 12:20 TTh,1014,0,0
-PHIL1305,PHIL1305,11096,Philosophy_and_Critical_Thinking,8:00 - 9:20 TTh,1001,0,0
-PSY1300,PSY1300,11099,Introduction_to_Psychology,9:30 - 10:50 MW,1006,0,0
-SOCI1310,SOCI1310,11102,Introduction_to_Sociology,3:30 - 5:00 MW,1006,0,0
-HIST1320,HIST1320,11105,History_of_the_United_States_1877_to_Date,12:30 - 1:50 MW,1014,0,0
-POSI2320,POSI2320,11108,Functions_of_American_Government,2:00 - 3:20 TTh,1011,0,0
-CJ3347,CJ3347,11111,Statistics_For_Criminal_Justice,11:00 - 12:20 MW,1016,0,0
-MATH2328,MATH2328,11113,Elementary_Statistics,2:00 - 3:20 TTh,1003,0,0
-SOCI3307,SOCI3307,11116,Statistics_for_the_Behavioral_Sciences,12:30 - 1:50 TTh,1005,0,0
-PSY2301,PSY2301,11118,Introduction_to_Statistics,8:00 - 9:20 MW,1019,0,0
-ART2313,ART2313,11121,Introduction_to_Fine_Arts,12:30 - 1:50 TTh,1011,0,0
-ENG2330,ENG2330,11124,World_Literature,2:00 - 3:20 MW,1009,0,0
-ENG2360,ENG2360,11127,US_Literature,9:30 - 10:50 TTh,1015,0,0
-CS1308,CS1308,11130,Computer_Literacy_and_the_Internet,3:30 - 5:00 MW,1015,0,0
-CJ1310,CJ1310,11133,Introduction_to_Criminal_Justice,2:00 - 3:20 MW,1015,0,0
-CJ2310,CJ2310,11136,Police_Systems_and_Practices,11:00 - 12:20 TTh,1003,0,0
-CJ2350,CJ2350,11139,The_Courts_and_Criminal_Procedure,11:00 - 12:20 MW,1017,0,0
-CJ2355,CJ2355,11142,Correctional_Systems_and_Practices,3:30 - 5:00 MW,1003,0,0
-CJ2360,CJ2360,11145,Fundamentals_of_Criminal_Law,2:00 - 3:20 TTh,1014,0,0
-CJ3300,CJ3300,11148,Juvenile_Justice,12:30 - 1:50 TTh,1003,0,0
-CJ3323,CJ3323,11150,Mid-Level_Management_in_Criminal_Justice_Agencies,8:00 - 9:20 TTh,1000,0,0
-CJ3346,CJ3346,11152,Research_in_Criminal_Justice,12:30 - 1:50 MW,1004,0,0
-CJ4310,CJ4310,11154,Special_Problems_in_the_Criminal_Justice_System,12:30 - 1:50 MW,1009,0,0
-CJ4340,CJ4340,11156,Crime_Theory_and_Victimization,8:00 - 9:20 MW,1007,0,0
-CJ4350,CJ4350,11158,Contemporary_Legal_Issues_in_Law_Enforcement,11:00 - 12:20 TTh,1016,0,0
-CJ4365,CJ4365,11160,Comparative_Criminal_Justice,9:30 - 10:50 TTh,1014,0,0
-CJ3322,CJ3322,11162,Race_Ethnicity_and_Criminal_Justice,8:00 - 9:20 TTh,1010,0,0
-CJ3325,CJ3325,11164,Penology,11:00 - 12:20 MW,1018,0,0
-ENG1310,ENG1310,11166,College_Writing_1,2:00 - 3:20 MW,1005,0,0
-ENG1320,ENG1320,11169,College_Writing_2,3:30 - 5:00 MW,1005,0,0
-ENG3303,ENG3303,11172,Technical_Writing,9:30 - 10:50 TTh,1005,0,0
-POSI2310,POSI2310,11174,Principles_of_American_Government,3:30 - 5:00 TTh,1011,0,0
-HIST1310,HIST1310,11177,History_of_the_United_States_to_1877,8:00 - 9:20 TTh,1019,0,0
-MATH1312,MATH1312,11180,College Statistics and Algebra,12:30 - 1:50 MW,1010,0,0
-COMM1310,COMM1310,11183,Fundamentals_of_Human_Communication,3:30 - 5:00 TTh,1007,0,0
-BIO1320,BIO1320,11186,Modern_Biology_I,8:00 - 9:20 TTh,1005,0,0
-BIO1421,BIO1421,11189,Modern_Biology_II,11:00 - 12:20 TTh,1007,0,0
-ANTH1312,ANTH1312,11192,Cultural_Anthropology,8:00 - 9:20 TTh,1013,0,0
-PSY2101,PSY2101,11195,Introduction_to_Statistics_Laboratory,8:00 - 9:20 MW,1018,0,0
-ECO2301,ECO2301,11198,Principles_of_Economics,9:30 - 10:50 MW,1011,0,0
-PSY1300,PSY1300,11201,Introduction_to_Psychology,11:00 - 12:20 MW,1015,0,0
-PSY2301,PSY2301,11204,Introduction_to_Statistics,8:00 - 9:20 TTh,1007,0,0
-ART2313,ART2313,11207,Introduction_to_Fine_Arts,11:00 - 12:20 TTh,1015,0,0
-SOCI1310,SOCI1310,11210,Introduction_to_Sociology,9:30 - 10:50 TTh,1019,0,0
-PHIL1305,PHIL1305,11213,Philosophy_and_Critical_Thinking,12:30 - 1:50 MW,1003,0,0
-PSY3300,PSY3300,11216,Lifespan_Development,8:00 - 9:20 MW,1001,0,0
-PSY3315,PSY3315,11218,Abnormal_Psychology,2:00 - 3:20 TTh,1010,0,0
-PSY3322,PSY3322,11220,Brain_and_Behavior,9:30 - 10:50 TTh,1016,0,0
-PSY3331,PSY3331,11222,Social_Psychology,8:00 - 9:20 MW,1012,0,0
-PSY3312,PSY3312,11224,Adolescent_Psychology,9:30 - 10:50 MW,1017,0,0
-PSY3313,PSY3313,11226,Psychology_of_Adulthood_and_Aging,8:00 - 9:20 TTh,1002,0,0
-PSY3316,PSY3316,11228,Personality_Psychology,3:30 - 5:00 MW,1007,0,0
-PSY4342,PSY4342,11230,Learning_and_Memory,12:30 - 1:50 MW,1015,0,0
-PSY3402,PSY3402,11232,Experimental_and_Research_Methods,9:30 - 10:50 MW,1010,0,0
-PSY4391,PSY4391,11234,History_and_Theory,11:00 - 12:20 TTh,1009,0,0
-MATH2471,MATH2471,11001,Calculus_I,12:30 - 1:50 TTh,1012,0,0
-MATH2471,MATH2471,11002,Calculus_I,11:00 - 12:20 MW,1007,0,0
-MATH2472,MATH2472,11004,Calculus_II,8:00 - 9:20 TTh,1012,0,0
-MATH2472,MATH2472,11005,Calculus_II,3:30 - 5:00 MW,1004,0,0
-ENG1310,ENG1310,11007,College_Writing_1,11:00 - 12:20 TTh,1000,0,0
-ENG1310,ENG1310,11008,College_Writing_1,3:30 - 5:00 MW,1000,0,0
-ENG1320,ENG1320,11010,College_Writing_2,3:30 - 5:00 MW,1009,0,0
-ENG1320,ENG1320,11011,College_Writing_2,2:00 - 3:20 MW,1016,0,0
-PHIL1305,PHIL1305,11013,Philosophy_and_Critical_Thinking,3:30 - 5:00 TTh,1002,0,0
-PHIL1305,PHIL1305,11014,Philosophy_and_Critical_Thinking,2:00 - 3:20 MW,1018,0,0
-COMM1310,COMM1310,11016,Fundamentals_of_Human_Communication,11:00 - 12:20 TTh,1012,0,0
-COMM1310,COMM1310,11017,Fundamentals_of_Human_Communication,11:00 - 12:20 MW,1003,0,0
-MATH2358,MATH2358,11019,Discrete_Math_1,8:00 - 9:20 TTh,1018,0,0
-MATH2358,MATH2358,11020,Discrete_Math_1,12:30 - 1:50 MW,1000,0,0
-MATH3398,MATH3398,11022,Discrete_Math_2,3:30 - 5:00 TTh,1005,0,0
-PHYS1315,PHYS1315,11024,General_Physics_I,11:00 - 12:20 TTh,1001,0,0
-PHYS1315,PHYS1315,11025,General_Physics_I,9:30 - 10:50 MW,1014,0,0
-PHYS1325,PHYS1325,11027,General_Physics_II,11:00 - 12:20 MW,1012,0,0
-PHYS1325,PHYS1325,11028,General_Physics_II,3:30 - 5:00 TTh,1006,0,0
-PSY1300,PSY1300,11030,Introduction_to_Psychology,3:30 - 5:00 TTh,1009,0,0
-PSY1300,PSY1300,11031,Introduction_to_Psychology,3:30 - 5:00 MW,1012,0,0
-SOCI1310,SOCI1310,11033,Introduction_to_Sociology,3:30 - 5:00 MW,1013,0,0
-SOCI1310,SOCI1310,11034,Introduction_to_Sociology,9:30 - 10:50 TTh,1009,0,0
-ENG2330,ENG2330,11036,World_Literature,2:00 - 3:20 TTh,1006,0,0
-ENG2330,ENG2330,11037,World_Literature,11:00 - 12:20 MW,1005,0,0
-MATH3305,MATH3305,11039,Introduction_to_Probability_and_Statistics,3:30 - 5:00 MW,1010,0,0
-POSI2310,POSI2310,11041,Principles_of_American_Government,3:30 - 5:00 MW,1001,0,0
-POSI2310,POSI2310,11042,Principles_of_American_Government,11:00 - 12:20 MW,1009,0,0
-ART2313,ART2313,11044,Introduction_to_Fine_Arts,12:30 - 1:50 TTh,1004,0,0
-ART2313,ART2313,11045,Introduction_to_Fine_Arts,12:30 - 1:50 TTh,1017,0,0
-CS3354,CS3354,11047,Object-Oriented_Design_and_Programming,3:30 - 5:00 TTh,1014,0,0
-CS2318,CS2318,11049,Assembly_Language,2:00 - 3:20 MW,1012,0,0
-CS2318,CS2318,11050,Assembly_Language,8:00 - 9:20 MW,1004,0,0
-CS4398,CS4398,11052,Software_Engineering_Project,12:30 - 1:50 TTh,1015,0,0
-CS1319,CS1319,11054,Fundamentals_of_Computer_Science,2:00 - 3:20 MW,1003,0,0
-CS1319,CS1319,11055,Fundamentals_of_Computer_Science,9:30 - 10:50 MW,1003,0,0
-CS1428,CS1428,11057,Foundations_of_Computer_Science_I,11:00 - 12:20 MW,1006,0,0
-CS1428,CS1428,11058,Foundations_of_Computer_Science_I,12:30 - 1:50 MW,1012,0,0
-CS2308,CS2308,11060,Foundations_of_Computer_Science_II,3:30 - 5:00 MW,1018,0,0
-CS2308,CS2308,11061,Foundations_of_Computer_Science_II,12:30 - 1:50 TTh,1006,0,0
-CS2315,CS2315,11063,Computer_Ethics,9:30 - 10:50 TTh,1017,0,0
-CS2315,CS2315,11064,Computer_Ethics,2:00 - 3:20 TTh,1007,0,0
-CS3339,CS3339,11066,Computer_Architecture,8:00 - 9:20 MW,1014,0,0
-CS3358,CS3358,11068,Data_Structures_and_Algorithms,12:30 - 1:50 MW,1017,0,0
-CS3398,CS3398,11070,Software_Engineering,2:00 - 3:20 MW,1019,0,0
-CS4328,CS4328,11072,Operating_Systems,2:00 - 3:20 MW,1017,0,0
-CS4310,CS4310,11074,Computer_Networks,8:00 - 9:20 MW,1011,0,0
-CS4332,CS4332,11076,Introduction_to_Database_Systems,12:30 - 1:50 MW,1007,0,0
-CS4326,CS4326,11078,Human_Factors_of_Computer_Systems,12:30 - 1:50 TTh,1016,0,0
-CS4371,CS4371,11080,Computer_System_Security,3:30 - 5:00 TTh,1018,0,0
-COMM1310,COMM1310,11082,Fundamentals_of_Human_Communication,3:30 - 5:00 TTh,1001,0,0
-COMM1310,COMM1310,11083,Fundamentals_of_Human_Communication,12:30 - 1:50 TTh,1009,0,0
-ENG1310,ENG1310,11085,College_Writing_1,12:30 - 1:50 TTh,1000,0,0
-ENG1310,ENG1310,11086,College_Writing_1,2:00 - 3:20 TTh,1002,0,0
-ENG1320,ENG1320,11088,College_Writing_2,12:30 - 1:50 TTh,1010,0,0
-ENG1320,ENG1320,11089,College_Writing_2,12:30 - 1:50 MW,1018,0,0
-HIST1310,HIST1310,11091,History_of_the_United_States_to_1877,2:00 - 3:20 MW,1006,0,0
-HIST1310,HIST1310,11092,History_of_the_United_States_to_1877,3:30 - 5:00 TTh,1016,0,0
-POSI2310,POSI2310,11094,Principles_of_American_Government,9:30 - 10:50 TTh,1007,0,0
-POSI2310,POSI2310,11095,Principles_of_American_Government,9:30 - 10:50 TTh,1018,0,0
-PHIL1305,PHIL1305,11097,Philosophy_and_Critical_Thinking,9:30 - 10:50 TTh,1006,0,0
-PHIL1305,PHIL1305,11098,Philosophy_and_Critical_Thinking,12:30 - 1:50 MW,1016,0,0
-PSY1300,PSY1300,11100,Introduction_to_Psychology,3:30 - 5:00 MW,1002,0,0
-PSY1300,PSY1300,11101,Introduction_to_Psychology,2:00 - 3:20 MW,1014,0,0
-SOCI1310,SOCI1310,11103,Introduction_to_Sociology,9:30 - 10:50 MW,1000,0,0
-SOCI1310,SOCI1310,11104,Introduction_to_Sociology,12:30 - 1:50 MW,1005,0,0
-HIST1320,HIST1320,11106,History_of_the_United_States_1877_to_Date,11:00 - 12:20 TTh,1017,0,0
-HIST1320,HIST1320,11107,History_of_the_United_States_1877_to_Date,9:30 - 10:50 TTh,1008,0,0
-POSI2320,POSI2320,11109,Functions_of_American_Government,2:00 - 3:20 MW,1013,0,0
-POSI2320,POSI2320,11110,Functions_of_American_Government,11:00 - 12:20 MW,1004,0,0
-CJ3347,CJ3347,11112,Statistics_For_Criminal_Justice,12:30 - 1:50 TTh,1008,0,0
-MATH2328,MATH2328,11114,Elementary_Statistics,2:00 - 3:20 TTh,1015,0,0
-MATH2328,MATH2328,11115,Elementary_Statistics,3:30 - 5:00 TTh,1000,0,0
-SOCI3307,SOCI3307,11117,Statistics_for_the_Behavioral_Sciences,8:00 - 9:20 MW,1005,0,0
-PSY2301,PSY2301,11119,Introduction_to_Statistics,11:00 - 12:20 TTh,1013,0,0
-PSY2301,PSY2301,11120,Introduction_to_Statistics,3:30 - 5:00 TTh,1013,0,0
-ART2313,ART2313,11122,Introduction_to_Fine_Arts,11:00 - 12:20 MW,1000,0,0
-ART2313,ART2313,11123,Introduction_to_Fine_Arts,8:00 - 9:20 MW,1016,0,0
-ENG2330,ENG2330,11125,World_Literature,2:00 - 3:20 TTh,1016,0,0
-ENG2330,ENG2330,11126,World_Literature,12:30 - 1:50 TTh,1014,0,0
-ENG2360,ENG2360,11128,US_Literature,9:30 - 10:50 MW,1016,0,0
-ENG2360,ENG2360,11129,US_Literature,12:30 - 1:50 MW,1001,0,0
-CS1308,CS1308,11131,Computer_Literacy_and_the_Internet,12:30 - 1:50 MW,1008,0,0
-CS1308,CS1308,11132,Computer_Literacy_and_the_Internet,9:30 - 10:50 TTh,1010,0,0
-CJ1310,CJ1310,11134,Introduction_to_Criminal_Justice,9:30 - 10:50 TTh,1002,0,0
-CJ1310,CJ1310,11135,Introduction_to_Criminal_Justice,9:30 - 10:50 MW,1007,0,0
-CJ2310,CJ2310,11137,Police_Systems_and_Practices,8:00 - 9:20 MW,1003,0,0
-CJ2310,CJ2310,11138,Police_Systems_and_Practices,3:30 - 5:00 TTh,1004,0,0
-CJ2350,CJ2350,11140,The_Courts_and_Criminal_Procedure,9:30 - 10:50 TTh,1011,0,0
-CJ2350,CJ2350,11141,The_Courts_and_Criminal_Procedure,9:30 - 10:50 TTh,1000,0,0
-CJ2355,CJ2355,11143,Correctional_Systems_and_Practices,2:00 - 3:20 MW,1011,0,0
-CJ2355,CJ2355,11144,Correctional_Systems_and_Practices,9:30 - 10:50 TTh,1012,0,0
-CJ2360,CJ2360,11146,Fundamentals_of_Criminal_Law,2:00 - 3:20 MW,1000,0,0
-CJ2360,CJ2360,11147,Fundamentals_of_Criminal_Law,11:00 - 12:20 TTh,1006,0,0
-CJ3300,CJ3300,11149,Juvenile_Justice,2:00 - 3:20 TTh,1018,0,0
-CJ3323,CJ3323,11151,Mid-Level_Management_in_Criminal_Justice_Agencies,2:00 - 3:20 TTh,1008,0,0
-CJ3346,CJ3346,11153,Research_in_Criminal_Justice,11:00 - 12:20 MW,1011,0,0
-CJ4310,CJ4310,11155,Special_Problems_in_the_Criminal_Justice_System,3:30 - 5:00 TTh,1003,0,0
-CJ4340,CJ4340,11157,Crime_Theory_and_Victimization,12:30 - 1:50 MW,1013,0,0
-CJ4350,CJ4350,11159,Contemporary_Legal_Issues_in_Law_Enforcement,11:00 - 12:20 MW,1013,0,0
-CJ4365,CJ4365,11161,Comparative_Criminal_Justice,3:30 - 5:00 MW,1019,0,0
-CJ3322,CJ3322,11163,Race_Ethnicity_and_Criminal_Justice,2:00 - 3:20 MW,1007,0,0
-CJ3325,CJ3325,11165,Penology,12:30 - 1:50 TTh,1007,0,0
-ENG1310,ENG1310,11167,College_Writing_1,11:00 - 12:20 MW,1001,0,0
-ENG1310,ENG1310,11168,College_Writing_1,9:30 - 10:50 MW,1015,0,0
-ENG1320,ENG1320,11170,College_Writing_2,8:00 - 9:20 MW,1006,0,0
-ENG1320,ENG1320,11171,College_Writing_2,9:30 - 10:50 MW,1019,0,0
-ENG3303,ENG3303,11173,Technical_Writing,8:00 - 9:20 MW,1000,0,0
-POSI2310,POSI2310,11175,Principles_of_American_Government,3:30 - 5:00 TTh,1015,0,0
-POSI2310,POSI2310,11176,Principles_of_American_Government,3:30 - 5:00 TTh,1008,0,0
-HIST1310,HIST1310,11178,History_of_the_United_States_to_1877,8:00 - 9:20 TTh,1016,0,0
-HIST1310,HIST1310,11179,History_of_the_United_States_to_1877,8:00 - 9:20 TTh,1008,0,0
-MATH1312,MATH1312,11181,College Statistics and Algebra,12:30 - 1:50 TTh,1013,0,0
-MATH1312,MATH1312,11182,College Statistics and Algebra,2:00 - 3:20 MW,1002,0,0
-COMM1310,COMM1310,11184,Fundamentals_of_Human_Communication,2:00 - 3:20 TTh,1001,0,0
-COMM1310,COMM1310,11185,Fundamentals_of_Human_Communication,12:30 - 1:50 MW,1006,0,0
-BIO1320,BIO1320,11187,Modern_Biology_I,11:00 - 12:20 TTh,1011,0,0
-BIO1320,BIO1320,11188,Modern_Biology_I,3:30 - 5:00 TTh,1012,0,0
-BIO1421,BIO1421,11190,Modern_Biology_II,2:00 - 3:20 TTh,1009,0,0
-BIO1421,BIO1421,11191,Modern_Biology_II,11:00 - 12:20 TTh,1010,0,0
-ANTH1312,ANTH1312,11193,Cultural_Anthropology,2:00 - 3:20 MW,1001,0,0
-ANTH1312,ANTH1312,11194,Cultural_Anthropology,11:00 - 12:20 MW,1019,0,0
-PSY2101,PSY2101,11196,Introduction_to_Statistics_Laboratory,8:00 - 9:20 MW,1010,0,0
-PSY2101,PSY2101,11197,Introduction_to_Statistics_Laboratory,9:30 - 10:50 TTh,1013,0,0
-ECO2301,ECO2301,11199,Principles_of_Economics,12:30 - 1:50 TTh,1002,0,0
-ECO2301,ECO2301,11200,Principles_of_Economics,2:00 - 3:20 TTh,1013,0,0
-PSY1300,PSY1300,11202,Introduction_to_Psychology,3:30 - 5:00 MW,1016,0,0
-PSY1300,PSY1300,11203,Introduction_to_Psychology,9:30 - 10:50 MW,1013,0,0
-PSY2301,PSY2301,11205,Introduction_to_Statistics,11:00 - 12:20 TTh,1002,0,0
-PSY2301,PSY2301,11206,Introduction_to_Statistics,8:00 - 9:20 TTh,1004,0,0
-ART2313,ART2313,11208,Introduction_to_Fine_Arts,2:00 - 3:20 TTh,1017,0,0
-ART2313,ART2313,11209,Introduction_to_Fine_Arts,9:30 - 10:50 MW,1002,0,0
-SOCI1310,SOCI1310,11211,Introduction_to_Sociology,3:30 - 5:00 MW,1011,0,0
-SOCI1310,SOCI1310,11212,Introduction_to_Sociology,2:00 - 3:20 TTh,1004,0,0
-PHIL1305,PHIL1305,11214,Philosophy_and_Critical_Thinking,8:00 - 9:20 TTh,1011,0,0
-PHIL1305,PHIL1305,11215,Philosophy_and_Critical_Thinking,8:00 - 9:20 MW,1008,0,0
-PSY3300,PSY3300,11217,Lifespan_Development,2:00 - 3:20 TTh,1012,0,0
-PSY3315,PSY3315,11219,Abnormal_Psychology,9:30 - 10:50 MW,1005,0,0
-PSY3322,PSY3322,11221,Brain_and_Behavior,8:00 - 9:20 MW,1017,0,0
-PSY3331,PSY3331,11223,Social_Psychology,9:30 - 10:50 MW,1001,0,0
-PSY3312,PSY3312,11225,Adolescent_Psychology,2:00 - 3:20 MW,1004,0,0
-PSY3313,PSY3313,11227,Psychology_of_Adulthood_and_Aging,3:30 - 5:00 TTh,1017,0,0
-PSY3316,PSY3316,11229,Personality_Psychology,3:30 - 5:00 MW,1017,0,0
-PSY4342,PSY4342,11231,Learning_and_Memory,8:00 - 9:20 MW,1015,0,0
-PSY3402,PSY3402,11233,Experimental_and_Research_Methods,9:30 - 10:50 MW,1004,0,0
-PSY4391,PSY4391,11235,History_and_Theory,3:30 - 5:00 MW,1014,0,0
+CourseNumber,SectionNumber,CourseName,TimeDay,RoomNumber,Capacity,Enrolled
+MATH2471,11000,Calculus_I,8:00-9:20 TTh,1025,20,5
+MATH2472,11003,Calculus_II,11:00-12:20 MW,1007,20,20
+US1100,11006,University_Seminar,15:30-17:00 MW,1014,20,8
+ENG1310,11009,College_Writing_1,14:00-15:20 TTh,1015,20,12
+ENG1320,11012,College_Writing_2,12:30-13:50 MW,1026,20,12
+PHIL1305,11015,Philosophy_and_Critical_Thinking,14:00-15:20 TTh,1006,20,13
+COMM1310,11018,Fundamentals_of_Human_Communication,11:00-12:20 TTh,1020,20,6
+MATH2358,11021,Discrete_Math_1,9:30-10:50 TTh,1031,20,1
+MATH3398,11024,Discrete_Math_2,8:00-9:20 MW,1003,20,18
+BIO1320,11026,Modern_Biology_I,15:30-17:00 TTh,1007,20,20
+BIO1421,11029,Modern_Biology_II,8:00-9:20 MW,1032,20,1
+CHEM1341,11032,General_Chemistry_I,15:30-17:00 MW,1003,20,7
+CHEM1342,11035,General_Chemistry_II,8:00-9:20 MW,1021,20,20
+PHYS1315,11038,General_Physics_I,15:30-17:00 MW,1030,20,20
+PHYS1325,11041,General_Physics_II,12:30-13:50 MW,1024,20,1
+PSY1300,11044,Introduction_to_Psychology,14:00-15:20 MW,1023,20,15
+SOCI1310,11047,Introduction_to_Sociology,8:00-9:20 TTh,1034,20,17
+ENG2310,11050,British_Literature,8:00-9:20 TTh,1031,20,11
+ENG2330,11053,World_Literature,15:30-17:00 TTh,1012,20,3
+ENG2360,11056,US_Literature,12:30-13:50 TTh,1010,20,3
+MATH3305,11059,Introduction_to_Probability_and_Statistics,11:00-12:20 TTh,1030,20,6
+POSI2310,11061,Principles_of_American_Government,8:00-9:20 MW,1010,20,3
+POSI2320,11064,Functions_of_American_Government,12:30-13:50 MW,1017,20,3
+ART2313,11067,Introduction_to_Fine_Arts,11:00-12:20 MW,1006,20,9
+DAN2313,11070,Introduction_to_Fine_Arts,12:30-13:50 TTh,1015,20,17
+MU2313,11073,Introduction_to_Fine_Arts,11:00-12:20 TTh,1007,20,2
+TH2313,11076,Introduction_to_Fine_Arts,12:30-13:50 MW,1001,20,6
+POSI2310,11079,Principles_of_American_Government,14:00-15:20 MW,1029,20,1
+POSI2320,11082,Functions_of_American_Government,9:30-10:50 TTh,1025,20,8
+CS3354,11085,Object-Oriented_Design_and_Programming,9:30-10:50 TTh,1022,20,9
+CS2318,11087,Assembly_Language,12:30-13:50 MW,1005,20,20
+CS4398,11090,Software_Engineering_Project,9:30-10:50 TTh,1027,20,14
+CS1319,11092,Fundamentals_of_Computer_Science,11:00-12:20 TTh,1033,20,14
+CS1428,11095,Foundations_of_Computer_Science_I,12:30-13:50 TTh,1023,20,10
+CS2308,11098,Foundations_of_Computer_Science_II,11:00-12:20 MW,1004,20,12
+CS2315,11101,Computer_Ethics,9:30-10:50 MW,1000,20,4
+CS3339,11104,Computer_Architecture,14:00-15:20 TTh,1005,20,10
+CS3358,11106,Data_Structures_and_Algorithms,11:00-12:20 TTh,1028,20,20
+CS3398,11108,Software_Engineering,14:00-15:20 TTh,1011,20,6
+CS4328,11110,Operating_Systems,8:00-9:20 MW,1005,20,8
+CS4310,11112,Computer_Networks,14:00-15:20 MW,1018,20,20
+CS4315,11114,Introduction_to_Data_Mining,12:30-13:50 TTh,1026,20,4
+CS4332,11116,Introduction_to_Database_Systems,15:30-17:00 TTh,1029,20,15
+CS4372,11118,Introduction_to_Digital_Multimedia,11:00-12:20 MW,1028,20,12
+CS4318,11120,Compiler_Construction,11:00-12:20 MW,1014,20,14
+CS4326,11122,Human_Factors_of_Computer_Systems,8:00-9:20 TTh,1033,20,18
+CS4371,11124,Computer_System_Security,15:30-17:00 MW,1032,20,18
+CS4380,11126,Parallel_Programming,11:00-12:20 TTh,1032,20,18
+CS4398,11128,Software_Engineering_Project,9:30-10:50 TTh,1029,20,7
+CS4378Z,11130,Practical_Game_Development,14:00-15:20 MW,1007,20,17
+CS4379A,11132,Software_Testing,14:00-15:20 TTh,1027,20,18
+CS4379B,11134,Introduction_to_Graphical_User_Interfaces,8:00-9:20 MW,1029,20,10
+COMM1310,11136,Fundamentals_of_Human_Communication,8:00-9:20 MW,1011,20,9
+ENG1310,11139,College_Writing_1,15:30-17:00 MW,1023,20,20
+ENG1320,11142,College_Writing_2,11:00-12:20 TTh,1031,20,6
+HIST1310,11145,History_of_the_United_States_to_1877,11:00-12:20 TTh,1027,20,13
+POSI2310,11148,Principles_of_American_Government,9:30-10:50 TTh,1005,20,5
+PHIL1305,11151,Philosophy_and_Critical_Thinking,11:00-12:20 MW,1031,20,1
+PSY1300,11154,Introduction_to_Psychology,14:00-15:20 TTh,1010,20,17
+SOCI1310,11157,Introduction_to_Sociology,15:30-17:00 MW,1011,20,8
+US1100,11160,University_Seminar,15:30-17:00 TTh,1032,20,14
+HIST1320,11163,History_of_the_United_States,8:00-9:20 TTh,1005,20,11
+POSI2320,11166,Functions_of_American_Government,14:00-15:20 MW,1004,20,13
+CJ3347,11169,Statistics_For_Criminal_Justice,12:30-13:50 TTh,1025,20,13
+MATH2328,11171,Elementary_Statistics,11:00-12:20 TTh,1010,20,11
+SOCI3307,11174,Statistics_for_the_Behavioral_Sciences,8:00-9:20 MW,1015,20,17
+PSY2301,11176,Introduction_to_Statistics,14:00-15:20 TTh,1031,20,3
+ART2313,11179,Introduction_to_Fine_Arts,15:30-17:00 MW,1024,20,12
+DAN2313,11182,Introduction_to_Fine_Arts,8:00-9:20 MW,1020,20,11
+MU2313,11185,Introduction_to_Fine_Arts,8:00-9:20 TTh,1021,20,6
+TH2313,11188,Introduction_to_Fine_Arts,15:30-17:00 MW,1002,20,11
+ENG2310,11191,British_Literature,8:00-9:20 MW,1012,20,4
+ENG2330,11194,World_Literature,11:00-12:20 TTh,1008,20,9
+ENG2360,11197,US_Literature,8:00-9:20 TTh,1010,20,1
+CS1308,11200,Computer_Literacy_and_the_Internet,12:30-13:50 TTh,1021,20,2
+CJ1310,11203,Introduction_to_Criminal_Justice,9:30-10:50 MW,1014,20,19
+CJ2310,11206,Police_Systems_and_Practices,9:30-10:50 MW,1019,20,15
+CJ2350,11209,The_Courts_and_Criminal_Procedure,9:30-10:50 TTh,1028,20,18
+CJ2355,11212,Correctional_Systems_and_Practices,14:00-15:20 MW,1003,20,2
+CJ2360,11215,Fundamentals_of_Criminal_Law,14:00-15:20 TTh,1022,20,9
+CJ3300,11218,Juvenile_Justice,15:30-17:00 TTh,1025,20,1
+CJ3323,11220,Mid-Level_Management_in_Criminal_Justice_Agencies,8:00-9:20 TTh,1030,20,6
+CJ3346,11222,Research_in_Criminal_Justice,8:00-9:20 MW,1017,20,10
+CJ4310,11224,Special_Problems_in_the_Criminal_Justice_System,14:00-15:20 MW,1028,20,12
+CJ4340,11226,Crime_Theory_and_Victimization,8:00-9:20 MW,1001,20,12
+CJ4350,11228,Contemporary_Legal_Issues_in_Law_Enforcement,14:00-15:20 MW,1016,20,15
+CJ4365,11230,Comparative_Criminal_Justice,8:00-9:20 MW,1028,20,15
+CJ3322,11232,Race_Ethnicity_and_Criminal_Justice,8:00-9:20 MW,1022,20,4
+CJ3325,11234,Penology,8:00-9:20 TTh,1013,20,19
+CJ3329,11236,Forensic_Evidence,12:30-13:50 MW,1028,20,6
+CJ4301,11238,Internship,9:30-10:50 TTh,1001,20,10
+CJ4309,11240,G._Media_and_Crime,14:00-15:20 TTh,1029,20,7
+CJ4309H,11242,Wrongful_Convictions,11:00-12:20 TTh,1006,20,10
+CJ4309I,11244,The_Death_Penalty_in_the_United_States,15:30-17:00 TTh,1031,20,13
+CJ4314,11246,Terrorism_in_the_United_States,11:00-12:20 MW,1002,20,20
+CJ4316,11248,Treatment_in_Community_and_Institutional_Corrections,14:00-15:20 MW,1009,20,11
+CJ4321,11250,Occupational_Crime,15:30-17:00 TTh,1033,20,14
+CJ4323,11252,Special_Operation_Units_in_Law_Enforcement_and_Corrections,9:30-10:50 MW,1005,20,16
+CJ4326,11254,Women_and_Criminal_Justice,11:00-12:20 MW,1021,20,16
+CJ4327,11256,Ethics_of_Social_Control,14:00-15:20 MW,1012,20,7
+CJ4329,11258,Organized_Crime,11:00-12:20 MW,1029,20,0
+CJ4330,11260,Cybercrime,8:00-9:20 TTh,1000,20,0
+CJ4331,11262,Serial_Murder,11:00-12:20 TTh,1004,20,17
+CJ4332,11264,Advanced_Criminal_Justice_Management,8:00-9:20 TTh,1015,20,1
+CJ4335,11266,The_Psychology_of_Antisocial_Behavior,11:00-12:20 MW,1023,20,2
+US1100,11268,University_Seminar,12:30-13:50 MW,1012,20,9
+ENG1310,11271,College_Writing_1,15:30-17:00 TTh,1014,20,7
+ENG1320,11274,College_Writing_2,11:00-12:20 MW,1011,20,8
+ENG3303,11277,Technical_Writing,15:30-17:00 TTh,1001,20,4
+POSI2310,11279,Principles_of_American_Government,8:00-9:20 MW,1024,20,1
+HIST1310,11282,History_of_the_United_States_to_1877,9:30-10:50 MW,1003,20,18
+HIST1320,11285,History_of_the_United_States,9:30-10:50 MW,1030,20,15
+MATH1315,11288,College_Algebra,14:00-15:20 TTh,1019,20,4
+COMM1310,11291,Fundamentals_of_Human_Communication,14:00-15:20 TTh,1001,20,18
+SPAN1410,11294,Spanish_I,11:00-12:20 MW,1033,20,3
+SPAN1420,11297,Spanish_II,12:30-13:50 TTh,1014,20,10
+SPAN1410,11300,Spanish_I,8:00-9:20 TTh,1006,20,3
+SPAN1420,11303,Spanish_II,9:30-10:50 MW,1006,20,8
+FR1410,11306,French_I,9:30-10:50 TTh,1004,20,13
+FR1420,11309,French_II,12:30-13:50 TTh,1018,20,13
+GER1410,11312,German_I,9:30-10:50 TTh,1016,20,10
+GER1420,11315,German_II,8:00-9:20 MW,1034,20,5
+BIO1320,11318,Modern_Biology_I,15:30-17:00 MW,1010,20,20
+BIO1421,11321,Modern_Biology_II,8:00-9:20 TTh,1027,20,20
+BIO1330,11324,Functional_Biology,14:00-15:20 TTh,1017,20,14
+BIO1331,11327,Organismal_Biology,8:00-9:20 MW,1006,20,15
+ANTH1312,11330,Cultural_Anthropology,15:30-17:00 TTh,1030,20,2
+PSY2101,11333,Introduction_to_Statistics_Laboratory,15:30-17:00 TTh,1013,20,16
+ECO2301,11336,Principles_of_Economics,11:00-12:20 MW,1026,20,11
+ECO2314,11339,Principles_of_Microeconomics,15:30-17:00 MW,1015,20,6
+GEO1310,11342,World_Geography,9:30-10:50 MW,1031,20,7
+PFW1301,11345,Social_and_Behavioral_Dimensions_of_Physical_Fitness_and_Wellness,14:00-15:20 MW,1026,20,17
+PSY2100,11348,Professional_Seminar,14:00-15:20 TTh,1013,20,17
+PSY1300,11351,Introduction_to_Psychology,15:30-17:00 MW,1020,20,13
+PSY2301,11354,Introduction_to_Statistics,12:30-13:50 MW,1006,20,10
+ART2313,11357,Introduction_to_Fine_Arts,8:00-9:20 TTh,1032,20,8
+DAN2313,11360,Introduction_to_Fine_Arts,11:00-12:20 TTh,1001,20,0
+MU2313,11363,Introduction_to_Fine_Arts,8:00-9:20 TTh,1028,20,20
+TH2313,11366,Introduction_to_Fine_Arts,12:30-13:50 TTh,1028,20,12
+SOCI1310,11369,Introduction_to_Sociology,15:30-17:00 MW,1001,20,12
+PHIL1305,11372,Philosophy_and_Critical_Thinking,9:30-10:50 TTh,1032,20,16
+PSY1300,11375,Introduction_to_Psychology,11:00-12:20 MW,1025,20,6
+PSY2301,11378,Introduction_to_Statistics,9:30-10:50 MW,1033,20,18
+PSY3300,11381,Lifespan_Development,11:00-12:20 TTh,1025,20,6
+PSY3315,11383,Abnormal_Psychology,12:30-13:50 MW,1002,20,8
+PSY3322,11385,Brain_and_Behavior,12:30-13:50 MW,1031,20,0
+PSY3331,11387,Social_Psychology,11:00-12:20 TTh,1012,20,0
+PSY3300,11389,Lifespan_Development,9:30-10:50 TTh,1010,20,6
+PSY3315,11391,Abnormal_Psychology,15:30-17:00 TTh,1028,20,12
+PSY3322,11393,Brain_and_Behavior,15:30-17:00 MW,1018,20,1
+PSY3331,11395,Social_Psychology,12:30-13:50 TTh,1027,20,3
+PSY3300,11397,Lifespan_Development,14:00-15:20 TTh,1012,20,18
+PSY3312,11399,Adolescent_Psychology,8:00-9:20 MW,1033,20,20
+PSY3313,11401,Psychology_of_Adulthood_and_Aging,15:30-17:00 TTh,1016,20,16
+PSY3315,11403,Abnormal_Psychology,14:00-15:20 TTh,1020,20,14
+PSY3316.,11405,Personality_Psychology,9:30-10:50 MW,1025,20,15
+PSY3321,11407,Sensation_and_Perception,8:00-9:20 MW,1004,20,5
+PSY3331,11409,Social_Psychology,9:30-10:50 MW,1004,20,8
+PSY3341,11411,Cognitive_Processes,8:00-9:20 MW,1030,20,18
+PSY4342,11413,Learning_and_Memory,12:30-13:50 TTh,1019,20,8
+MATH2471,11001,Calculus_I,14:00-15:20 TTh,1008,20,20
+MATH2471,11002,Calculus_I,9:30-10:50 TTh,1014,20,0
+MATH2472,11004,Calculus_II,15:30-17:00 TTh,1006,20,8
+MATH2472,11005,Calculus_II,15:30-17:00 MW,1028,20,15
+US1100,11007,University_Seminar,11:00-12:20 TTh,1019,20,9
+US1100,11008,University_Seminar,9:30-10:50 MW,1029,20,3
+ENG1310,11010,College_Writing_1,9:30-10:50 TTh,1019,20,15
+ENG1310,11011,College_Writing_1,12:30-13:50 TTh,1005,20,18
+ENG1320,11013,College_Writing_2,11:00-12:20 MW,1015,20,16
+ENG1320,11014,College_Writing_2,11:00-12:20 MW,1022,20,12
+PHIL1305,11016,Philosophy_and_Critical_Thinking,11:00-12:20 MW,1012,20,9
+PHIL1305,11017,Philosophy_and_Critical_Thinking,9:30-10:50 MW,1009,20,15
+COMM1310,11019,Fundamentals_of_Human_Communication,15:30-17:00 TTh,1003,20,12
+COMM1310,11020,Fundamentals_of_Human_Communication,8:00-9:20 TTh,1017,20,17
+MATH2358,11022,Discrete_Math_1,15:30-17:00 MW,1025,20,16
+MATH2358,11023,Discrete_Math_1,9:30-10:50 MW,1022,20,12
+MATH3398,11025,Discrete_Math_2,8:00-9:20 MW,1025,20,6
+BIO1320,11027,Modern_Biology_I,14:00-15:20 MW,1030,20,7
+BIO1320,11028,Modern_Biology_I,14:00-15:20 TTh,1009,20,5
+BIO1421,11030,Modern_Biology_II,15:30-17:00 TTh,1000,20,2
+BIO1421,11031,Modern_Biology_II,14:00-15:20 TTh,1000,20,13
+CHEM1341,11033,General_Chemistry_I,15:30-17:00 TTh,1018,20,0
+CHEM1341,11034,General_Chemistry_I,14:00-15:20 MW,1010,20,18
+CHEM1342,11036,General_Chemistry_II,14:00-15:20 TTh,1016,20,11
+CHEM1342,11037,General_Chemistry_II,9:30-10:50 TTh,1003,20,1
+PHYS1315,11039,General_Physics_I,14:00-15:20 TTh,1021,20,17
+PHYS1315,11040,General_Physics_I,9:30-10:50 TTh,1020,20,8
+PHYS1325,11042,General_Physics_II,8:00-9:20 MW,1000,20,0
+PHYS1325,11043,General_Physics_II,15:30-17:00 TTh,1019,20,14
+PSY1300,11045,Introduction_to_Psychology,12:30-13:50 TTh,1022,20,12
+PSY1300,11046,Introduction_to_Psychology,14:00-15:20 MW,1006,20,3
+SOCI1310,11048,Introduction_to_Sociology,14:00-15:20 MW,1025,20,0
+SOCI1310,11049,Introduction_to_Sociology,14:00-15:20 TTh,1023,20,7
+ENG2310,11051,British_Literature,14:00-15:20 TTh,1026,20,8
+ENG2310,11052,British_Literature,15:30-17:00 MW,1013,20,13
+ENG2330,11054,World_Literature,9:30-10:50 MW,1012,20,9
+ENG2330,11055,World_Literature,9:30-10:50 TTh,1026,20,7
+ENG2360,11057,US_Literature,9:30-10:50 MW,1020,20,17
+ENG2360,11058,US_Literature,15:30-17:00 MW,1009,20,4
+MATH3305,11060,Introduction_to_Probability_and_Statistics,9:30-10:50 TTh,1018,20,20
+POSI2310,11062,Principles_of_American_Government,12:30-13:50 MW,1004,20,9
+POSI2310,11063,Principles_of_American_Government,11:00-12:20 TTh,1015,20,7
+POSI2320,11065,Functions_of_American_Government,11:00-12:20 TTh,1002,20,12
+POSI2320,11066,Functions_of_American_Government,12:30-13:50 MW,1008,20,4
+ART2313,11068,Introduction_to_Fine_Arts,14:00-15:20 TTh,1032,20,17
+ART2313,11069,Introduction_to_Fine_Arts,11:00-12:20 TTh,1022,20,13
+DAN2313,11071,Introduction_to_Fine_Arts,11:00-12:20 MW,1016,20,12
+DAN2313,11072,Introduction_to_Fine_Arts,12:30-13:50 TTh,1024,20,15
+MU2313,11074,Introduction_to_Fine_Arts,9:30-10:50 TTh,1021,20,15
+MU2313,11075,Introduction_to_Fine_Arts,11:00-12:20 MW,1003,20,11
+TH2313,11077,Introduction_to_Fine_Arts,11:00-12:20 TTh,1018,20,15
+TH2313,11078,Introduction_to_Fine_Arts,11:00-12:20 MW,1013,20,0
+POSI2310,11080,Principles_of_American_Government,14:00-15:20 TTh,1004,20,19
+POSI2310,11081,Principles_of_American_Government,12:30-13:50 TTh,1006,20,0
+POSI2320,11083,Functions_of_American_Government,14:00-15:20 MW,1001,20,1
+POSI2320,11084,Functions_of_American_Government,14:00-15:20 TTh,1025,20,13
+CS3354,11086,Object-Oriented_Design_and_Programming,9:30-10:50 MW,1008,20,18
+CS2318,11088,Assembly_Language,14:00-15:20 TTh,1028,20,11
+CS2318,11089,Assembly_Language,8:00-9:20 MW,1016,20,6
+CS4398,11091,Software_Engineering_Project,9:30-10:50 MW,1010,20,17
+CS1319,11093,Fundamentals_of_Computer_Science,11:00-12:20 TTh,1023,20,16
+CS1319,11094,Fundamentals_of_Computer_Science,12:30-13:50 MW,1027,20,5
+CS1428,11096,Foundations_of_Computer_Science_I,12:30-13:50 TTh,1004,20,11
+CS1428,11097,Foundations_of_Computer_Science_I,11:00-12:20 MW,1000,20,11
+CS2308,11099,Foundations_of_Computer_Science_II,9:30-10:50 MW,1015,20,9
+CS2308,11100,Foundations_of_Computer_Science_II,8:00-9:20 MW,1027,20,10
+CS2315,11102,Computer_Ethics,8:00-9:20 TTh,1016,20,7
+CS2315,11103,Computer_Ethics,15:30-17:00 MW,1019,20,18
+CS3339,11105,Computer_Architecture,8:00-9:20 TTh,1003,20,3
+CS3358,11107,Data_Structures_and_Algorithms,9:30-10:50 MW,1027,20,11
+CS3398,11109,Software_Engineering,12:30-13:50 MW,1025,20,15
+CS4328,11111,Operating_Systems,11:00-12:20 MW,1034,20,5
+CS4310,11113,Computer_Networks,14:00-15:20 TTh,1003,20,18
+CS4315,11115,Introduction_to_Data_Mining,15:30-17:00 TTh,1023,20,5
+CS4332,11117,Introduction_to_Database_Systems,11:00-12:20 MW,1017,20,3
+CS4372,11119,Introduction_to_Digital_Multimedia,14:00-15:20 MW,1000,20,8
+CS4318,11121,Compiler_Construction,9:30-10:50 MW,1024,20,1
+CS4326,11123,Human_Factors_of_Computer_Systems,12:30-13:50 TTh,1000,20,14
+CS4371,11125,Computer_System_Security,9:30-10:50 MW,1017,20,4
+CS4380,11127,Parallel_Programming,8:00-9:20 TTh,1026,20,18
+CS4398,11129,Software_Engineering_Project,12:30-13:50 MW,1009,20,0
+CS4378Z,11131,Practical_Game_Development,12:30-13:50 MW,1034,20,3
+CS4379A,11133,Software_Testing,12:30-13:50 MW,1030,20,0
+CS4379B,11135,Introduction_to_Graphical_User_Interfaces,9:30-10:50 TTh,1015,20,2
+COMM1310,11137,Fundamentals_of_Human_Communication,11:00-12:20 TTh,1024,20,5
+COMM1310,11138,Fundamentals_of_Human_Communication,15:30-17:00 TTh,1020,20,15
+ENG1310,11140,College_Writing_1,14:00-15:20 MW,1008,20,17
+ENG1310,11141,College_Writing_1,9:30-10:50 TTh,1008,20,5
+ENG1320,11143,College_Writing_2,9:30-10:50 TTh,1024,20,8
+ENG1320,11144,College_Writing_2,12:30-13:50 MW,1015,20,6
+HIST1310,11146,History_of_the_United_States_to_1877,12:30-13:50 TTh,1030,20,19
+HIST1310,11147,History_of_the_United_States_to_1877,8:00-9:20 TTh,1011,20,3
+POSI2310,11149,Principles_of_American_Government,14:00-15:20 TTh,1024,20,0
+POSI2310,11150,Principles_of_American_Government,12:30-13:50 TTh,1001,20,4
+PHIL1305,11152,Philosophy_and_Critical_Thinking,12:30-13:50 MW,1021,20,1
+PHIL1305,11153,Philosophy_and_Critical_Thinking,12:30-13:50 MW,1019,20,17
+PSY1300,11155,Introduction_to_Psychology,9:30-10:50 MW,1026,20,4
+PSY1300,11156,Introduction_to_Psychology,15:30-17:00 TTh,1021,20,7
+SOCI1310,11158,Introduction_to_Sociology,12:30-13:50 MW,1000,20,6
+SOCI1310,11159,Introduction_to_Sociology,12:30-13:50 TTh,1013,20,11
+US1100,11161,University_Seminar,8:00-9:20 TTh,1008,20,17
+US1100,11162,University_Seminar,14:00-15:20 MW,1014,20,5
+HIST1320,11164,History_of_the_United_States,9:30-10:50 TTh,1013,20,8
+HIST1320,11165,History_of_the_United_States,8:00-9:20 TTh,1009,20,8
+POSI2320,11167,Functions_of_American_Government,11:00-12:20 MW,1027,20,18
+POSI2320,11168,Functions_of_American_Government,11:00-12:20 TTh,1009,20,20
+CJ3347,11170,Statistics_For_Criminal_Justice,9:30-10:50 MW,1002,20,1
+MATH2328,11172,Elementary_Statistics,8:00-9:20 MW,1007,20,8
+MATH2328,11173,Elementary_Statistics,15:30-17:00 TTh,1008,20,11
+SOCI3307,11175,Statistics_for_the_Behavioral_Sciences,11:00-12:20 MW,1032,20,9
+PSY2301,11177,Introduction_to_Statistics,12:30-13:50 TTh,1033,20,18
+PSY2301,11178,Introduction_to_Statistics,15:30-17:00 MW,1016,20,13
+ART2313,11180,Introduction_to_Fine_Arts,14:00-15:20 MW,1031,20,8
+ART2313,11181,Introduction_to_Fine_Arts,9:30-10:50 TTh,1012,20,2
+DAN2313,11183,Introduction_to_Fine_Arts,8:00-9:20 MW,1009,20,11
+DAN2313,11184,Introduction_to_Fine_Arts,9:30-10:50 MW,1007,20,5
+MU2313,11186,Introduction_to_Fine_Arts,11:00-12:20 TTh,1029,20,12
+MU2313,11187,Introduction_to_Fine_Arts,11:00-12:20 MW,1019,20,1
+TH2313,11189,Introduction_to_Fine_Arts,8:00-9:20 TTh,1002,20,10
+TH2313,11190,Introduction_to_Fine_Arts,12:30-13:50 MW,1011,20,2
+ENG2310,11192,British_Literature,8:00-9:20 MW,1014,20,9
+ENG2310,11193,British_Literature,8:00-9:20 MW,1018,20,5
+ENG2330,11195,World_Literature,12:30-13:50 MW,1016,20,11
+ENG2330,11196,World_Literature,12:30-13:50 TTh,1002,20,16
+ENG2360,11198,US_Literature,11:00-12:20 MW,1009,20,8
+ENG2360,11199,US_Literature,12:30-13:50 TTh,1031,20,2
+CS1308,11201,Computer_Literacy_and_the_Internet,14:00-15:20 TTh,1033,20,15
+CS1308,11202,Computer_Literacy_and_the_Internet,14:00-15:20 TTh,1002,20,4
+CJ1310,11204,Introduction_to_Criminal_Justice,11:00-12:20 MW,1005,20,1
+CJ1310,11205,Introduction_to_Criminal_Justice,8:00-9:20 TTh,1018,20,16
+CJ2310,11207,Police_Systems_and_Practices,9:30-10:50 TTh,1000,20,0
+CJ2310,11208,Police_Systems_and_Practices,8:00-9:20 TTh,1029,20,7
+CJ2350,11210,The_Courts_and_Criminal_Procedure,14:00-15:20 MW,1011,20,15
+CJ2350,11211,The_Courts_and_Criminal_Procedure,9:30-10:50 TTh,1017,20,17
+CJ2355,11213,Correctional_Systems_and_Practices,12:30-13:50 TTh,1011,20,2
+CJ2355,11214,Correctional_Systems_and_Practices,12:30-13:50 TTh,1012,20,3
+CJ2360,11216,Fundamentals_of_Criminal_Law,15:30-17:00 MW,1007,20,15
+CJ2360,11217,Fundamentals_of_Criminal_Law,15:30-17:00 MW,1026,20,16
+CJ3300,11219,Juvenile_Justice,15:30-17:00 TTh,1002,20,20
+CJ3323,11221,Mid-Level_Management_in_Criminal_Justice_Agencies,9:30-10:50 MW,1021,20,5
+CJ3346,11223,Research_in_Criminal_Justice,8:00-9:20 TTh,1020,20,13
+CJ4310,11225,Special_Problems_in_the_Criminal_Justice_System,12:30-13:50 MW,1003,20,7
+CJ4340,11227,Crime_Theory_and_Victimization,14:00-15:20 MW,1019,20,8
+CJ4350,11229,Contemporary_Legal_Issues_in_Law_Enforcement,15:30-17:00 TTh,1022,20,13
+CJ4365,11231,Comparative_Criminal_Justice,15:30-17:00 MW,1021,20,7
+CJ3322,11233,Race_Ethnicity_and_Criminal_Justice,14:00-15:20 TTh,1014,20,3
+CJ3325,11235,Penology,9:30-10:50 MW,1001,20,1
+CJ3329,11237,Forensic_Evidence,15:30-17:00 MW,1008,20,18
+CJ4301,11239,Internship,14:00-15:20 MW,1017,20,0
+CJ4309,11241,G._Media_and_Crime,9:30-10:50 MW,1028,20,19
+CJ4309H,11243,Wrongful_Convictions,15:30-17:00 MW,1000,20,14
+CJ4309I,11245,The_Death_Penalty_in_the_United_States,14:00-15:20 MW,1032,20,6
+CJ4314,11247,Terrorism_in_the_United_States,8:00-9:20 TTh,1001,20,15
+CJ4316,11249,Treatment_in_Community_and_Institutional_Corrections,14:00-15:20 MW,1033,20,2
+CJ4321,11251,Occupational_Crime,11:00-12:20 TTh,1011,20,1
+CJ4323,11253,Special_Operation_Units_in_Law_Enforcement_and_Corrections,14:00-15:20 TTh,1007,20,3
+CJ4326,11255,Women_and_Criminal_Justice,14:00-15:20 MW,1034,20,16
+CJ4327,11257,Ethics_of_Social_Control,12:30-13:50 MW,1022,20,10
+CJ4329,11259,Organized_Crime,11:00-12:20 MW,1008,20,1
+CJ4330,11261,Cybercrime,9:30-10:50 MW,1013,20,15
+CJ4331,11263,Serial_Murder,15:30-17:00 TTh,1009,20,7
+CJ4332,11265,Advanced_Criminal_Justice_Management,15:30-17:00 MW,1006,20,14
+CJ4335,11267,The_Psychology_of_Antisocial_Behavior,15:30-17:00 TTh,1011,20,3
+US1100,11269,University_Seminar,9:30-10:50 TTh,1006,20,10
+US1100,11270,University_Seminar,12:30-13:50 TTh,1008,20,6
+ENG1310,11272,College_Writing_1,8:00-9:20 MW,1019,20,4
+ENG1310,11273,College_Writing_1,12:30-13:50 MW,1018,20,11
+ENG1320,11275,College_Writing_2,14:00-15:20 MW,1027,20,9
+ENG1320,11276,College_Writing_2,12:30-13:50 MW,1010,20,3
+ENG3303,11278,Technical_Writing,9:30-10:50 TTh,1007,20,0
+POSI2310,11280,Principles_of_American_Government,12:30-13:50 TTh,1009,20,15
+POSI2310,11281,Principles_of_American_Government,15:30-17:00 TTh,1004,20,19
+HIST1310,11283,History_of_the_United_States_to_1877,12:30-13:50 TTh,1020,20,20
+HIST1310,11284,History_of_the_United_States_to_1877,15:30-17:00 MW,1034,20,1
+HIST1320,11286,History_of_the_United_States,11:00-12:20 MW,1024,20,2
+HIST1320,11287,History_of_the_United_States,14:00-15:20 MW,1015,20,20
+MATH1315,11289,College_Algebra,11:00-12:20 MW,1018,20,6
+MATH1315,11290,College_Algebra,11:00-12:20 MW,1010,20,14
+COMM1310,11292,Fundamentals_of_Human_Communication,9:30-10:50 TTh,1011,20,19
+COMM1310,11293,Fundamentals_of_Human_Communication,11:00-12:20 TTh,1017,20,4
+SPAN1410,11295,Spanish_I,11:00-12:20 MW,1030,20,15
+SPAN1410,11296,Spanish_I,14:00-15:20 TTh,1018,20,13
+SPAN1420,11298,Spanish_II,15:30-17:00 TTh,1015,20,0
+SPAN1420,11299,Spanish_II,12:30-13:50 TTh,1032,20,4
+SPAN1410,11301,Spanish_I,11:00-12:20 TTh,1003,20,14
+SPAN1410,11302,Spanish_I,8:00-9:20 TTh,1019,20,11
+SPAN1420,11304,Spanish_II,9:30-10:50 TTh,1033,20,13
+SPAN1420,11305,Spanish_II,15:30-17:00 TTh,1026,20,6
+FR1410,11307,French_I,12:30-13:50 TTh,1003,20,4
+FR1410,11308,French_I,9:30-10:50 MW,1016,20,16
+FR1420,11310,French_II,14:00-15:20 MW,1013,20,14
+FR1420,11311,French_II,15:30-17:00 MW,1031,20,15
+GER1410,11313,German_I,8:00-9:20 TTh,1022,20,10
+GER1410,11314,German_I,15:30-17:00 MW,1017,20,0
+GER1420,11316,German_II,15:30-17:00 MW,1029,20,14
+GER1420,11317,German_II,14:00-15:20 MW,1005,20,9
+BIO1320,11319,Modern_Biology_I,14:00-15:20 MW,1022,20,17
+BIO1320,11320,Modern_Biology_I,15:30-17:00 MW,1012,20,8
+BIO1421,11322,Modern_Biology_II,12:30-13:50 MW,1020,20,1
+BIO1421,11323,Modern_Biology_II,12:30-13:50 TTh,1016,20,10
+BIO1330,11325,Functional_Biology,9:30-10:50 TTh,1009,20,7
+BIO1330,11326,Functional_Biology,15:30-17:00 MW,1005,20,7
+BIO1331,11328,Organismal_Biology,15:30-17:00 TTh,1027,20,8
+BIO1331,11329,Organismal_Biology,8:00-9:20 TTh,1024,20,18
+ANTH1312,11331,Cultural_Anthropology,12:30-13:50 TTh,1017,20,12
+ANTH1312,11332,Cultural_Anthropology,14:00-15:20 MW,1024,20,0
+PSY2101,11334,Introduction_to_Statistics_Laboratory,15:30-17:00 TTh,1017,20,20
+PSY2101,11335,Introduction_to_Statistics_Laboratory,15:30-17:00 TTh,1005,20,19
+ECO2301,11337,Principles_of_Economics,8:00-9:20 TTh,1007,20,15
+ECO2301,11338,Principles_of_Economics,12:30-13:50 MW,1032,20,6
+ECO2314,11340,Principles_of_Microeconomics,15:30-17:00 MW,1033,20,13
+ECO2314,11341,Principles_of_Microeconomics,11:00-12:20 TTh,1014,20,15
+GEO1310,11343,World_Geography,8:00-9:20 MW,1013,20,11
+GEO1310,11344,World_Geography,15:30-17:00 MW,1027,20,10
+PFW1301,11346,Social_and_Behavioral_Dimensions_of_Physical_Fitness_and_Wellness,12:30-13:50 MW,1007,20,8
+PFW1301,11347,Social_and_Behavioral_Dimensions_of_Physical_Fitness_and_Wellness,8:00-9:20 TTh,1004,20,17
+PSY2100,11349,Professional_Seminar,9:30-10:50 TTh,1002,20,17
+PSY2100,11350,Professional_Seminar,8:00-9:20 TTh,1023,20,19
+PSY1300,11352,Introduction_to_Psychology,11:00-12:20 TTh,1000,20,10
+PSY1300,11353,Introduction_to_Psychology,9:30-10:50 MW,1018,20,1
+PSY2301,11355,Introduction_to_Statistics,9:30-10:50 MW,1034,20,4
+PSY2301,11356,Introduction_to_Statistics,15:30-17:00 TTh,1010,20,17
+ART2313,11358,Introduction_to_Fine_Arts,12:30-13:50 MW,1029,20,5
+ART2313,11359,Introduction_to_Fine_Arts,9:30-10:50 MW,1023,20,20
+DAN2313,11361,Introduction_to_Fine_Arts,15:30-17:00 MW,1004,20,8
+DAN2313,11362,Introduction_to_Fine_Arts,8:00-9:20 TTh,1012,20,9
+MU2313,11364,Introduction_to_Fine_Arts,12:30-13:50 MW,1014,20,6
+MU2313,11365,Introduction_to_Fine_Arts,14:00-15:20 MW,1002,20,17
+TH2313,11367,Introduction_to_Fine_Arts,11:00-12:20 MW,1001,20,8
+TH2313,11368,Introduction_to_Fine_Arts,8:00-9:20 MW,1008,20,9
+SOCI1310,11370,Introduction_to_Sociology,9:30-10:50 MW,1011,20,3
+SOCI1310,11371,Introduction_to_Sociology,8:00-9:20 MW,1002,20,18
+PHIL1305,11373,Philosophy_and_Critical_Thinking,12:30-13:50 MW,1033,20,20
+PHIL1305,11374,Philosophy_and_Critical_Thinking,11:00-12:20 TTh,1005,20,16
+PSY1300,11376,Introduction_to_Psychology,8:00-9:20 MW,1031,20,13
+PSY1300,11377,Introduction_to_Psychology,11:00-12:20 TTh,1013,20,17
+PSY2301,11379,Introduction_to_Statistics,11:00-12:20 TTh,1021,20,0
+PSY2301,11380,Introduction_to_Statistics,12:30-13:50 TTh,1007,20,14
+PSY3300,11382,Lifespan_Development,14:00-15:20 MW,1021,20,20
+PSY3315,11384,Abnormal_Psychology,11:00-12:20 TTh,1026,20,16
+PSY3322,11386,Brain_and_Behavior,14:00-15:20 MW,1020,20,9
+PSY3331,11388,Social_Psychology,8:00-9:20 TTh,1014,20,7
+PSY3300,11390,Lifespan_Development,15:30-17:00 TTh,1024,20,4
+PSY3315,11392,Abnormal_Psychology,12:30-13:50 TTh,1029,20,19
+PSY3322,11394,Brain_and_Behavior,9:30-10:50 TTh,1030,20,2
+PSY3331,11396,Social_Psychology,14:00-15:20 TTh,1030,20,6
+PSY3300,11398,Lifespan_Development,8:00-9:20 MW,1026,20,12
+PSY3312,11400,Adolescent_Psychology,11:00-12:20 MW,1020,20,18
+PSY3313,11402,Psychology_of_Adulthood_and_Aging,9:30-10:50 TTh,1023,20,8
+PSY3315,11404,Abnormal_Psychology,8:00-9:20 MW,1023,20,13
+PSY3316.,11406,Personality_Psychology,9:30-10:50 MW,1032,20,5
+PSY3321,11408,Sensation_and_Perception,12:30-13:50 MW,1013,20,3
+PSY3331,11410,Social_Psychology,11:00-12:20 TTh,1016,20,10
+PSY3341,11412,Cognitive_Processes,12:30-13:50 MW,1023,20,7
+PSY4342,11414,Learning_and_Memory,15:30-17:00 MW,1022,20,9
