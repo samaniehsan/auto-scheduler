@@ -20,6 +20,6 @@ public class CoursePrioritizationServiceImpl implements CoursePrioritizationServ
         if(passedCourses == null)
             throw new NullPointerException("passedCourses can not be null");
 
-        return null;
+        return candidateCourses;
     }
 }
