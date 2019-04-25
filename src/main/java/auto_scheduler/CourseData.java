@@ -157,6 +157,8 @@ public class CourseData {
                 ,"12:30 - 1:50 TTh"
                 ,"2:00 - 3:20 TTh"
                 ,"3:30 - 5:00 TTh"));
+        
+        int TimeSlot[] = {100,101,102,103,104,105,200,201,202,203,204,205};
 
         int i;
         int c= 0;
@@ -169,6 +171,7 @@ public class CourseData {
                 } else {
                     courses.get(list.get(c)).setRoomNumber(room1);
                     courses.get(list.get(c)).setDayTime(TimeDay.get(j));
+                    courses.get(list.get(c)).setTimeSlot(TimeSlot[j]);
                     c++;
 
                 }
