@@ -10,18 +10,16 @@ public class OperationContextParser {
 					return new OperationContext(OperationContext.OperationCode.Schedule, args[1]);
 				}
 			}
-			if("--peek".equalsIgnoreCase(args[0])) {
+			if("--dry-run".equalsIgnoreCase(args[0])) {
 				if(!args[1].isEmpty()) {
-					return new OperationContext(OperationContext.OperationCode.Peek, args[1]);
+					return new OperationContext(OperationContext.OperationCode.DryRun, args[1]);
 				}
 			}
-		}
-		else if(args.length == 3) {
-			if("--cancel".equalsIgnoreCase(args[0]) && !args[1].isEmpty() && !args[2].isEmpty()) {
-				return new OperationContext(OperationContext.OperationCode.Cancel, args[1], args[2]);
+			if("--show".equalsIgnoreCase(args[0]) && !args[1].isEmpty()) {
+				return new OperationContext(OperationContext.OperationCode.Show, args[1]);
 			}
-			if("--select".equalsIgnoreCase(args[0]) && !args[1].isEmpty() && !args[2].isEmpty()) {
-				return new OperationContext(OperationContext.OperationCode.Select, args[1], args[2]);
+			if("--cancel".equalsIgnoreCase(args[0]) && !args[1].isEmpty()) {
+				return new OperationContext(OperationContext.OperationCode.Cancel, args[1]);
 			}
 		}
 		return null;

@@ -39,10 +39,10 @@ public class Main {
 	}
 	
 	private static void printUsage() {
-		System.out.println("java org.txstate.auto_scheduler usage");
-		System.out.println("java org.txstate.auto_scheduler --schedule AXYZID");
-		System.out.println("java org.txstate.auto_scheduler --peek AXYZID");
-		System.out.println("java org.txstate.auto_scheduler --select AXYZID Set1");
-		System.out.println("java org.txstate.auto_scheduler --cancel AXYZID Set1");
+		System.out.println("java auto_scheduler-1.0.jar usage");
+		System.out.println("java auto_scheduler-1.0.jar --schedule AXYZID");
+		System.out.println("java auto_scheduler-1.0.jar --dry-run AXYZID");
+		System.out.println("java auto_scheduler-1.0.jar --show AXYZID");
+		System.out.println("java auto_scheduler-1.0.jar --cancel AXYZID");
 	}
 }

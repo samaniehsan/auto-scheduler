@@ -9,14 +9,13 @@ public class OperationServiceFactory {
 		switch (opCode) {
 		case Schedule:
 			return new Scheduler(pathProvider);
-		case Select:
-			return new SchedulerSelector();
+		case DryRun:
+			return new ScheduleDryRunner(pathProvider);
+		case Show:
+			return new ScheduleShower(pathProvider);			
 		case Cancel:
-			return new ScheduleCancelation();
-		case Peek:
-			return new SchedulePeeker();
-		}
-			
+			return new ScheduleCancelation(pathProvider);
+		}			
 		return null;
 	}
 	
