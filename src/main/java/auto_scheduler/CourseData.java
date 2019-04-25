@@ -44,14 +44,13 @@ public class CourseData {
     }
 
     public static void enrolled(List<CourseInfo> courses){
-        for (int i = 0; i < (courses.size()/12)+ 1;i++) {
-                    courses.get(i).setCapacity(20);
-                    courses.get(i).setEnrolled(1);
+        Random enrolled = new Random();
+        for (int i = 0; i < (courses.size());i++) {
+            courses.get(i).setCapacity(20);
+            courses.get(i).setEnrolled(enrolled.nextInt(21));
+       }
 
-
-
-
-        }
+    }
 
     }
     /**
