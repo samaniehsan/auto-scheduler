@@ -14,7 +14,7 @@ public class CourseInfo {
     private int enrolled;
     private int roomNumber;
     private int sectionNumber;
-    // private int timeSlot;
+    private int timeSlot;
 
     /**
      * Gets the section number
@@ -143,13 +143,13 @@ public class CourseInfo {
         return this.enrolled >= this.capacity;
     }
 
-    // public void setTimeSlot(int timeSlot) {
-    //     this.timeSlot = timeSlot;
-    // }
+    public void setTimeSlot(int timeSlot) {
+        this.timeSlot = timeSlot;
+    }
 
     public int getTimeSlot() {
-        // return this.timeSlot;
-        return 0; //todo by barry rominger
+        return this.timeSlot;
+        // return 0; //todo by barry rominger
         //dynamically calcualte a timeslot between 100 - 799.
         //where 100 is Sunday 8:00 AM - 9:30 AM
         //Where 700 is Saturday 8:00 AM - 9:30 AM
