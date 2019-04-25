@@ -1,20 +1,53 @@
-package org.txstate.auto_scheduler;
+import java.io.FileReader;
+        import java.io.IOException;
+        import java.io.FileNotFoundException;
+        import java.io.Reader;
+        import java.io.File;
+        import java.util.ArrayList;
+        import java.util.Collection;
+        import java.util.List;
+        import java.util.LinkedHashMap;
+        import java.util.Map;
+        import java.util.TreeMap;
+        import org.apache.commons.csv.CSVFormat;
+        import org.apache.commons.csv.CSVParser;
+        import org.apache.commons.csv.CSVRecord;
 
-import java.util.Collection;
-import java.io.IOException;
-import java.io.FileNotFoundException;
-import java.lang.UnsupportedOperationException;
 
-public class CourseScheduleRepositoryImpl implements CourseScheduleRepository {    
-    
+public class CourseScheduleRepositoryImpl implements CourseScheduleRepository {
+
     ResourcePathProvider resourcePathProvider;
     public CourseScheduleRepositoryImpl(ResourcePathProvider resourcePathProvider) {
         this.resourcePathProvider = resourcePathProvider;
     }
 
     public Collection<CourseInfo> getClasses() throws FileNotFoundException,  IOException {
-        String courseScheduleFolder = this.resourcePathProvider.getClassSchedule();
-        throw new UnsupportedOperationException("to be implmented!");
+        List<CourseInfo> schedule = new ArrayList<>();
+        CSVFormat format = CSVFormat.RFC4180.withHeader().withDelimiter(',');
+        String filePath = resourcePathProvider.getClassSchedule() + "/" + "courseSchedule.csv";
+        File file = new File(filePath);
+        CSVParser parser;
+        try {
+            parser = new CSVParser(new FileReader(filePath), format);
+            for (CSVRecord record : parser) {
+                CourseInfo course = new CourseInfo();
+                course.setCourseNumber(record.get("CourseNumber"));
+                course.setSectionNumber(Integer.parseInt(record.get("SectionNumber")));
+                course.setCourseName(record.get("CourseName"));
+                course.setDayTime(record.get("TimeDay"));
+                course.setRoomNumber(Integer.parseInt(record.get("RoomNumber")));
+                course.setCapacity(Integer.parseInt(record.get("Capacity")));
+                course.setEnrolled(Integer.parseInt(record.get("Enrolled")));
+                schedule.add(course);
+            }
+            parser.close();
+
+        } catch (IOException e) {
+            System.out.println("Failed to load class data");
+            e.printStackTrace();
+        }
+        timeSlotCreater(schedule);
+        return schedule;
     }
     public void incrementEnrolledCount(Collection<String> sectionNumbers) throws FileNotFoundException,  IOException {
         if(sectionNumbers == null || sectionNumbers.size() == 0)
@@ -22,5 +55,33 @@ public class CourseScheduleRepositoryImpl implements CourseScheduleRepository {
 
         throw new UnsupportedOperationException("to be implmented!");
         //String courseScheduleFolder = this.resourcePathProvider.getClassSchedule();
+    }
+
+    public static void timeSlotCreater(List<CourseInfo> schedule){
+        Map<Integer, Integer> time = new LinkedHashMap<>();
+        Map<String, Integer> day = new LinkedHashMap<>();
+        for (CourseInfo course: schedule){
+            String[] dayTimeSplit = course.getDayTime().split(" ");
+            String[] timeSplit = course.getDayTime().split(":");
+            time.put(Integer.parseInt(timeSplit[0]),0);
+            day.put(dayTimeSplit[1],0);
+        }
+        Map<Integer, Integer> timeMap = new TreeMap<>(time);
+        Map<String, Integer> dayMap = new TreeMap<>(day);
+        int i = 0;
+        for (Integer key : timeMap.keySet()) {
+            timeMap.put(key, i);
+            i++;
+        }
+        i = 100;
+        for (String key : dayMap.keySet()) {
+            dayMap.put(key, i);
+            i += 100;
+        }
+        for (CourseInfo course: schedule){
+            String[] dayTimeSplit = course.getDayTime().split(" ");
+            String[] timeSplit = course.getDayTime().split(":");
+            course.setTimeSlot(timeMap.get(Integer.parseInt(timeSplit[0])) + dayMap.get(dayTimeSplit[1]));
+        }
     }
 }
