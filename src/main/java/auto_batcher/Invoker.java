@@ -23,14 +23,11 @@ public class Invoker {
 
 	public File[] runParser() throws ParseException {
 		File folder = new File(newFile);
-		if(!folder.exists()) {
-			File[] listOfFiles = folder.listFiles(new FilenameFilter() {
-				public boolean accept(File dir, String name) {
-					return name.toLowerCase().endsWith(".json");
-				}
-			});
-			return listOfFiles;
-		}
-		return null;
+		File[] listOfFiles = folder.listFiles(new FilenameFilter() {
+			public boolean accept(File dir, String name) {
+				return name.toLowerCase().endsWith(".json");
+			}
+		});
+		return listOfFiles;
 	}
 }

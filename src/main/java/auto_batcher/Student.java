@@ -24,5 +24,19 @@ public class Student
 		this.year = year;
 	}
 	
+	public String getFirstName(){
+		return name.getFirstName();
+	}
+
+	public String getLastName(){
+		return name.getLastName();
+	}
+
+	public Long getYear(){
+		return year;
+	}
+
+
+
 }
 
