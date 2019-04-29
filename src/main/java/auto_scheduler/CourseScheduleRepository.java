@@ -6,5 +6,5 @@ import java.io.FileNotFoundException;
 
 public interface CourseScheduleRepository {
     Collection<CourseInfo> getClasses() throws FileNotFoundException,  IOException;
-    void incrementEnrolledCount(Collection<String> sectionNumbers) throws FileNotFoundException,  IOException;
+    void incrementEnrolledCount(Collection<Integer> sectionNumbers) throws FileNotFoundException,  IOException;
 }

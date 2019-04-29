@@ -50,12 +50,56 @@ public class CourseScheduleRepositoryImpl implements CourseScheduleRepository {
         timeSlotCreater(schedule);
         return schedule;
     }
-    public void incrementEnrolledCount(Collection<String> sectionNumbers) throws FileNotFoundException,  IOException {
+    public void incrementEnrolledCount(Collection<Integer> sectionNumbers) throws FileNotFoundException,  IOException {
         if(sectionNumbers == null || sectionNumbers.size() == 0)
             throw new IllegalArgumentException("sectionNumbers are required!");
+        List<CourseInfo> schedule = new ArrayList<>();
+        CSVFormat format = CSVFormat.RFC4180.withHeader().withDelimiter(',');
+        String filePath = resourcePathProvider.getClassSchedule() + "/" + "courseSchedule.csv";
+        File file = new File(filePath);
+        CSVParser parser;
+        try {
+            parser = new CSVParser(new FileReader(filePath), format);
+            for (CSVRecord record : parser) {
+                CourseInfo course = new CourseInfo();
+                course.setCourseNumber(record.get("CourseNumber"));
+                course.setSectionNumber(Integer.parseInt(record.get("SectionNumber")));
+                course.setCourseName(record.get("CourseName"));
+                course.setDayTime(record.get("TimeDay"));
+                course.setRoomNumber(Integer.parseInt(record.get("RoomNumber")));
+                course.setCapacity(Integer.parseInt(record.get("Capacity")));
+                course.setEnrolled(Integer.parseInt(record.get("Enrolled")));
+                schedule.add(course);
+            }
+            parser.close();
 
-        throw new UnsupportedOperationException("to be implmented!");
-        //String courseScheduleFolder = this.resourcePathProvider.getClassSchedule();
+        } catch (IOException e) {
+            System.out.println("Failed to load class data");
+            e.printStackTrace();
+        }
+
+        for (CourseInfo course:schedule){
+            if(sectionNumbers.contains(course.getSectionNumber())){
+                    course.setEnrolled(course.getEnrolled()+1);
+            }
+        }
+        try (
+                BufferedWriter writer = Files.newBufferedWriter(Paths.get(filePath));
+
+                CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT
+                        .withHeader("CourseNumber", "SectionNumber", "CourseName", "TimeDay","RoomNumber","Capacity","Enrolled"));
+        ) {
+            for (int i = 0; i < (schedule.size()); i++)
+                csvPrinter.printRecord(
+                        schedule.get(i).getCourseNumber(),
+                        schedule.get(i).getSectionNumber(),
+                        schedule.get(i).getCourseName(),
+                        schedule.get(i).getDayTime(),
+                        schedule.get(i).getRoomNumber(),
+                        schedule.get(i).getCapacity(),
+                        schedule.get(i).getEnrolled());
+            csvPrinter.flush();
+        }
     }
 
     public static void timeSlotCreater(List<CourseInfo> schedule){
