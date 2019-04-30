@@ -14,15 +14,31 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class FirstLastName
+public class NameTuple
 {
 	private String firstName;
 	private String lastName;
+	private String studentId;
 
-	FirstLastName(String firstName, String lastName){
+	public NameTuple(String firstName, String lastName, String studentId){
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.studentId = studentId;
 	}
-	
-}
+	public NameTuple(NameTuple tuple){
+		this(tuple.firstName,tuple.lastName, tuple.studentId);
+	}
 
+	public String getFirstName(){
+		return firstName;
+	}
+
+	public String getLastName(){
+		return lastName;
+	}
+
+	
+	public String getStudentId(){
+		return studentId;
+	}
+}

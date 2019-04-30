@@ -25,20 +25,33 @@ public class Main {
 				multiStudentInvoker = new MultiStudentScheduleInvoker(invoker);
 			}
 
+			ArrayList<Student> groupedStudents = null;
+
 			String newFile = "resources/data/records";
-			ArrayList<Student> groupedStudents = new ArrayList<Student>();
 
 			Invoker invoker = new Invoker(newFile);
-			File[] files = invoker.runParser();
-			if (files !=null && files.length != 0) {
-				StudentInfoRepo studentInfoRepo = new StudentInfoRepo(files);
-				studentInfoRepo.obtainJSON();
-				StudentGrouper studenGrouper = new StudentGrouper(studentInfoRepo.getRepo());
-				studenGrouper.randomGrouping();
-				groupedStudents = studenGrouper.getStudentList();
 
-				if(multiStudentInvoker != null ) { 
-					multiStudentInvoker.scheduleAll(groupedStudents);
+			File[] files = invoker.runParser();
+
+			if(groupedStudents == null){
+
+				if (files !=null && files.length != 0) {
+					groupedStudents = new ArrayList();
+
+					StudentInfoRepo studentInfoRepo = new StudentInfoRepo(files);
+					studentInfoRepo.obtainJSON();
+					StudentGrouper studenGrouper = new StudentGrouper(studentInfoRepo.getRepo());
+					groupedStudents = studenGrouper.randomGrouping();
+
+					if(multiStudentInvoker != null ) { 
+						multiStudentInvoker.scheduleAll(groupedStudents);
+					}
+				}
+
+				if(groupedStudents != null) {
+					for(Student s : groupedStudents){
+						System.out.println(s.getFirstName()+" "+s.getLastName()+" "+s.getYear());
+					}
 				}
 			}
 
