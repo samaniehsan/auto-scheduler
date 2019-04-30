@@ -48,11 +48,11 @@ public class Main {
 					}
 				}
 
-
-				for(Student s : groupedStudents){
-					System.out.println(s.getFirstName()+" "+s.getLastName()+" "+s.getYear());
+				if(groupedStudents != null) {
+					for(Student s : groupedStudents){
+						System.out.println(s.getFirstName()+" "+s.getLastName()+" "+s.getYear());
+					}
 				}
-
 			}
 
 		} catch (Exception e) {

@@ -56,8 +56,9 @@ public class StudentInfoRepo
 	public void addToRepo(JSONObject student){
   		Long year = (Long) student.get("year");  
   		String firstName = (String) student.get("firstName");
-  		String lastName = (String) student.get("lastName");
-  		NameTuple name = new NameTuple(firstName,lastName);
+		String lastName = (String) student.get("lastName");
+		String studentId = (String) student.get("studentId");
+  		NameTuple name = new NameTuple(firstName,lastName,studentId);
 		repository.put(name,year);
 	}
 

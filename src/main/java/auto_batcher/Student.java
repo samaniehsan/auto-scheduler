@@ -14,29 +14,17 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class Student
+public class Student extends NameTuple
 {
-	private NameTuple name;
 	private Long year;
 
-	public Student(NameTuple name, Long year){
-		this.name = name;
+	public Student(NameTuple nameTuple, Long year) {
+		super(nameTuple);
 		this.year = year;
-	}
-	
-	public String getFirstName(){
-		return name.getFirstName();
-	}
-
-	public String getLastName(){
-		return name.getLastName();
 	}
 
 	public Long getYear(){
 		return year;
 	}
-
-
-
 }
 
