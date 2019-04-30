@@ -19,12 +19,12 @@ import java.util.Collections;
 
 public class StudentGrouper
 {
-	private Map<FirstLastName, Long> repository;
+	private Map<NameTuple, Long> repository;
 	private Random random = new Random();
 	private ArrayList<Student> studentList = new ArrayList<Student>();
-	List<FirstLastName> keys;
+	List<NameTuple> keys;
 
-	public StudentGrouper(Map<FirstLastName, Long> repository){
+	public StudentGrouper(Map<NameTuple, Long> repository){
 		this.repository = repository;
 	}
 
@@ -47,12 +47,12 @@ public class StudentGrouper
 	public ArrayList<Student> randomGrouping(){
 
 		Student student;
-		keys = new ArrayList<FirstLastName>(repository.keySet());
+		keys = new ArrayList<NameTuple>(repository.keySet());
 
 		for(int i = 0; i < repository.size(); i++){
 
 			do{
-				FirstLastName randomKey = keys.get(random.nextInt(keys.size()));
+				NameTuple randomKey = keys.get(random.nextInt(keys.size()));
 				Long value = repository.get(randomKey);
 				student = new Student(randomKey, value);
 

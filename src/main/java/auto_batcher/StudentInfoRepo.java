@@ -16,7 +16,7 @@ import java.nio.file.Paths;
 
 public class StudentInfoRepo
 {
-	private Map<FirstLastName, Long> repository = new HashMap<FirstLastName, Long>();
+	private Map<NameTuple, Long> repository = new HashMap<NameTuple, Long>();
 	private File[] listOfFiles;
 
 	public StudentInfoRepo(File[] listOfFiles){
@@ -57,11 +57,11 @@ public class StudentInfoRepo
   		Long year = (Long) student.get("year");  
   		String firstName = (String) student.get("firstName");
   		String lastName = (String) student.get("lastName");
-  		FirstLastName name = new FirstLastName(firstName,lastName);
+  		NameTuple name = new NameTuple(firstName,lastName);
 		repository.put(name,year);
 	}
 
-	public Map<FirstLastName, Long> getRepo(){
+	public Map<NameTuple, Long> getRepo(){
 		return repository;
 	} 
 

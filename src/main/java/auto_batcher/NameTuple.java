@@ -14,29 +14,24 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class Student
+public class NameTuple
 {
-	private NameTuple name;
-	private Long year;
+	private String firstName;
+	private String lastName;
 
-	public Student(NameTuple name, Long year){
-		this.name = name;
-		this.year = year;
+	NameTuple(String firstName, String lastName){
+		this.firstName = firstName;
+		this.lastName = lastName;
 	}
-	
+
 	public String getFirstName(){
-		return name.getFirstName();
+		return firstName;
 	}
 
 	public String getLastName(){
-		return name.getLastName();
+		return lastName;
 	}
 
-	public Long getYear(){
-		return year;
-	}
-
-
-
+	
 }
 
