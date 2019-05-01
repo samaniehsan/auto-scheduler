@@ -16,6 +16,14 @@ public class Main {
 				OperationServiceFactory factory = new OperationServiceFactory();
 				factory.get(opContext).execute(opContext);
 			}
+		} catch (NoScheduleFoundException e) {
+			e.printStackTrace(System.err);
+			System.err.println("----");
+			System.err.println(
+				String.format(
+					"Scheduling Error for StudentId:%s",
+					e.getStudentId())
+				);
 		} catch (StudentNotFoundException e) {
 			e.printStackTrace(System.err);
 			System.err.println("----");
