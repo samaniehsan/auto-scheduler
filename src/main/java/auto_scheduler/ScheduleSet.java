@@ -1,8 +1,12 @@
 package org.txstate.auto_scheduler;
 
 public class ScheduleSet {
+	private String studentId;
+	public ScheduleSet(String studentId) {
+		this.studentId = studentId;
+	}
 	
-	String getId() {
-		return null;
+	public String getStudentId() {
+		return studentId;
 	}
 }

@@ -17,15 +17,23 @@ public class StudentScheduleRepositoryImpl implements StudentScheduleRepository 
         this.resourcePathProvider = resourcePathProvider;
     }
 
-    public void delete(String studentId) throws FileNotFoundException,  IOException {
+    public boolean delete(String studentId) throws FileNotFoundException,  IOException {
         if(studentId == null || studentId.isEmpty()) 
             throw new IllegalArgumentException("studentid is required!");
 
+        String studentBioFile = resourcePathProvider.getRecords() + "/" + studentId + ".json";
+        File fileBio = new File(studentBioFile);
+        if(!fileBio.exists())
+            throw new StudentNotFoundException(studentId,"Student not found.");
+
         String filePath = resourcePathProvider.getClassSchedule() + "/" + studentId + "_schedule.csv";
         File file = new File(filePath);
-        if(file.delete()){
-            System.out.println(resourcePathProvider.getClassSchedule() + "/" + studentId + "_schedule.csv deleted");
-        }else System.out.println(resourcePathProvider.getClassSchedule() + "/" + studentId + "_schedule.csv deleted");
+        if(file.exists()) {    
+            if(file.delete()){
+                return true;
+            }
+        }
+        return false;
     }
 
     public Collection<Integer> get(String studentId) throws FileNotFoundException,  IOException {
