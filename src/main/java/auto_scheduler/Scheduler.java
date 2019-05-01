@@ -45,8 +45,12 @@ public class Scheduler implements ScheduleAction {
 		
 		CandidateCourseService candiateCourseService = new CandidateCourseServiceImpl();
 		Collection<CurriculumCourse>  candidateCourses = candiateCourseService.buildList(records, curriculumCourses);
-		printDegreePlan("Candidate Courses", candidateCourses);
+        Collection<String> passedClasses = candiateCourseService.getPassedCourses(records);
 		
+		printDegreePlan("Candidate Courses", candidateCourses);
+
+		CoursePrioritizationService prioritizationService = new CoursePrioritizationServiceImpl(); 
+		Collection<CurriculumCourse> prioritizedCourses = prioritizationService.build(candidateCourses, passedClasses);
 
 		return null;
 	}
