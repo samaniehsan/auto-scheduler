@@ -1,5 +1,7 @@
 package org.txstate.auto_scheduler;
 
+import org.txstate.auto_scheduler.ScheduleSet;
+
 public class Main {
 
 	public Main () {
@@ -14,7 +16,11 @@ public class Main {
 				printUsage();
 			else {
 				OperationServiceFactory factory = new OperationServiceFactory();
-				factory.get(opContext).execute(opContext);
+				ScheduleSet scheduleResult = factory.get(opContext).execute(opContext);
+				if(scheduleResult != null) {
+					String resultString = scheduleResult.toString();
+					System.out.print(resultString);
+				}
 			}
 		} catch (NoScheduleFoundException e) {
 			e.printStackTrace(System.err);
@@ -24,6 +30,7 @@ public class Main {
 					"Scheduling Error for StudentId:%s",
 					e.getStudentId())
 				);
+			System.exit(1);
 		} catch (StudentNotFoundException e) {
 			e.printStackTrace(System.err);
 			System.err.println("----");
@@ -32,6 +39,7 @@ public class Main {
 					"Could not Find Student:%s",
 					e.getStudentId())
 				);
+			System.exit(2);
 		} catch (InvalidMajorException e) {
 			e.printStackTrace(System.err);
 			System.err.println("----");
@@ -40,9 +48,11 @@ public class Main {
 					"Could not Find Major:%s",
 					e.getMajor())
 				);
+			System.exit(3);
 		}
 		catch( Exception e) {
 			e.printStackTrace(System.err);
+			System.exit(4);
 		}
 	}
 	
