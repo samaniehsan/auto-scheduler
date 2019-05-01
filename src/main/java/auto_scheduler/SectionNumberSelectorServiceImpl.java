@@ -6,7 +6,8 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.ArrayList;
-
+import java.util.stream.*;
+import java.lang.Integer; 
 
 public class SectionNumberSelectorServiceImpl implements SectionNumberSelectorService {
     public Collection<Integer> build(
@@ -26,6 +27,9 @@ public class SectionNumberSelectorServiceImpl implements SectionNumberSelectorSe
         
         if(nCourses > 0 && nSections > 0) {
             ArrayList<Integer> sectionNumbers = new ArrayList<Integer>();
+            Collection<CourseInfo> relevantCourses = getRelevantClasses(
+                courseInfos, 
+                prioritizedCourses);
             return sectionNumbers;
         } else {
             if (nCourses > 0 ) {
@@ -35,4 +39,33 @@ public class SectionNumberSelectorServiceImpl implements SectionNumberSelectorSe
         }
     }
 
+    Collection<CourseInfo> getRelevantClasses(
+        Collection<CourseInfo> courseInfos,
+        Collection<CurriculumCourse> prioritizedCourses
+    ) {
+        List<CourseInfo>  candidateCourses = courseInfos.stream().filter(
+            courseInfo ->
+            courseInfo.getEnrolled() < courseInfo.getCapacity()
+        ).filter(
+            course ->
+            prioritizedCourses.stream().noneMatch(
+                prioritizedCourse ->
+                prioritizedCourse.getCourseNumber().equalsIgnoreCase(course.getCourseNumber())
+            )
+        ).sorted(
+            (scheduleCourse1, scheduleCourse2 ) 
+            -> 
+            (
+                new Integer(
+                scheduleCourse1.getTimeSlot()
+                )
+            ).
+            compareTo(
+                new Integer(
+                    scheduleCourse2.getTimeSlot()
+                )
+            )
+        ).collect(Collectors.toList());
+        return candidateCourses;
+    }
 }
