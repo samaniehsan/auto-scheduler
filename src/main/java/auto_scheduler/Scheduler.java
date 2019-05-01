@@ -52,6 +52,24 @@ public class Scheduler implements ScheduleAction {
 		CoursePrioritizationService prioritizationService = new CoursePrioritizationServiceImpl(); 
 		Collection<CurriculumCourse> prioritizedCourses = prioritizationService.build(candidateCourses, passedClasses);
 
+		CourseScheduleRepository CourseScheduleRepository = new CourseScheduleRepositoryImpl(this.pathProvider);
+		Collection<CourseInfo> courseInfos = CourseScheduleRepository.getClasses();
+
+		SectionNumberSelectorService sectionNumberSelectionService = new SectionNumberSelectorServiceImpl();
+		Collection<Integer> sectionNumbers = sectionNumberSelectionService.build(
+			studentId,
+			courseInfos,
+			prioritizedCourses);
+
+		if(!readonlyMode) {
+			StudentScheduleRepository studentScheduleRepository = new StudentScheduleRepositoryImpl(this.pathProvider);
+			//waitin on Barry's pr to get merged to change this to write section numbers.
+			studentScheduleRepository.write(
+				studentId,
+				null);
+		}
+		
+
 		return null;
 	}
 
