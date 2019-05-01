@@ -21,10 +21,7 @@ public class StudentScheduleRepositoryImpl implements StudentScheduleRepository 
         if(studentId == null || studentId.isEmpty()) 
             throw new IllegalArgumentException("studentid is required!");
 
-        String studentBioFile = resourcePathProvider.getRecords() + "/" + studentId + ".json";
-        File fileBio = new File(studentBioFile);
-        if(!fileBio.exists())
-            throw new StudentNotFoundException(studentId,"Student not found.");
+        ensureStudentExists(studentId);
 
         String filePath = resourcePathProvider.getClassSchedule() + "/" + studentId + "_schedule.csv";
         File file = new File(filePath);
@@ -41,22 +38,30 @@ public class StudentScheduleRepositoryImpl implements StudentScheduleRepository 
             throw new IllegalArgumentException("studentid is required!");
         ArrayList<Integer> sectionNumbers = new ArrayList<>();
 
+        ensureStudentExists(studentId);
+
         CSVFormat format = CSVFormat.RFC4180.withHeader().withDelimiter(',');
         String filePath = resourcePathProvider.getClassSchedule() + "/" + studentId + "_schedule.csv";
         File file = new File(filePath);
-        CSVParser parser;
-        try {
-            parser = new CSVParser(new FileReader(filePath), format);
-            for (CSVRecord record : parser) {
-                sectionNumbers.add(Integer.parseInt(record.get("SectionNumber")));
+        if(file.exists()) {
+            CSVParser parser;
+            try {
+                parser = new CSVParser(new FileReader(filePath), format);
+                for (CSVRecord record : parser) {
+                    sectionNumbers.add(Integer.parseInt(record.get("SectionNumber")));
+                }
+                parser.close();
+    
+            } catch (IOException e) {
+                System.out.println("Failed to load data");
+                e.printStackTrace();
             }
-            parser.close();
-
-        } catch (IOException e) {
-            System.out.println("Failed to load data");
-            e.printStackTrace();
+            return sectionNumbers;
+        } else {
+            throw new NoScheduleFoundException(
+                studentId, 
+                "No Schedule Found");
         }
-        return sectionNumbers;
     }
     
     public void write(String studentId, Collection<Integer> sectionNumbers)
@@ -82,5 +87,12 @@ public class StudentScheduleRepositoryImpl implements StudentScheduleRepository 
 
             csvPrinter.flush();
         }
+    }
+
+    private void ensureStudentExists(String studentId) {
+        String studentBioFile = resourcePathProvider.getRecords() + "/" + studentId + ".json";
+        File fileBio = new File(studentBioFile);
+        if(!fileBio.exists())
+            throw new StudentNotFoundException(studentId,"Student not found.");
     }
 }

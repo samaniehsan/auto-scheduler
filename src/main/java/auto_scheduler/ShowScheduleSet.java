@@ -1,5 +1,7 @@
 package org.txstate.auto_scheduler;
 
+import java.util.Collection;
+
 public class ShowScheduleSet extends ScheduleSet {
 
     Collection<CourseInfo> studentSchedule;
@@ -7,13 +9,12 @@ public class ShowScheduleSet extends ScheduleSet {
         String studentId,
         Collection<CourseInfo> studentSchedule) {
         super(studentId);
-        this.success = success;
         this.studentSchedule = studentSchedule;
     }
     
     @Override
     public String toString() {
-        String classes = "StudentId:" + this.getStudentId();
+        String classes = "show Schedule for StudentId:" + this.getStudentId();
         classes = "CourseNumber\\CourseName\\SectionNumber\\TimeDay\n";
         for (CourseInfo course: studentSchedule) {
             classes += course.getCourseNumber() + "\\" +
