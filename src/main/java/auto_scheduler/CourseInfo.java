@@ -5,9 +5,7 @@ package org.txstate.auto_scheduler;
  * @author Barry Rominger
  */
 
-public class CourseInfo {
-    private String courseNumber;
-    private String courseName;
+public class CourseInfo extends CourseBase {
     private String subject;
     private String timeDay;
     private int capacity;
@@ -31,42 +29,6 @@ public class CourseInfo {
 
     public void setSectionNumber(int sectionNumber) {
         this.sectionNumber = sectionNumber;
-    }
-
-    /**
-     * Gets the course number
-     * @return this course number
-     */
-
-    public String getCourseNumber() {
-        return courseNumber;
-    }
-
-    /**
-     * Changes the course number
-     * @param courseNumber
-     */
-
-    public void setCourseNumber(String courseNumber) {
-        this.courseNumber = courseNumber;
-    }
-
-    /**
-     * Gets the course name
-     * @return this course name
-     */
-
-    public String getCourseName() {
-        return courseName;
-    }
-
-    /**
-     * Changes course name
-     * @param courseName
-     */
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
-
     }
 
     /**
