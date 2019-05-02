@@ -89,7 +89,7 @@ public class Scheduler implements ScheduleAction {
 		
 		Collection<CourseInfo> courses = courseInfos.stream().filter(
 				courseInfo ->
-				sectionNumbers.stream().noneMatch(
+				sectionNumbers.stream().anyMatch(
 					sectionNumber -> 
 					courseInfo.getSectionNumber() == sectionNumber.intValue()
 					)

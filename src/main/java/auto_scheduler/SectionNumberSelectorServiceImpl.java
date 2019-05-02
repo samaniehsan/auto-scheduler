@@ -79,11 +79,17 @@ public class SectionNumberSelectorServiceImpl implements SectionNumberSelectorSe
             courseInfo.getEnrolled() < courseInfo.getCapacity()
         ).filter(
             course ->
-            prioritizedCourses.stream().noneMatch(
+            prioritizedCourses.stream().anyMatch(
                 prioritizedCourse ->
                 prioritizedCourse.getCourseNumber().equalsIgnoreCase(course.getCourseNumber())
             )
-        ).sorted(
+        ).collect(Collectors.toList());
+        System.out.println("****filtered courses debug****");
+        for(CourseInfo ci : filteredCourses ) {
+            System.out.println("Section:"+ci.getSectionNumber()+"courseNumber"+ci.getCourseNumber());
+        }
+        System.out.println("****end debug****");
+        filteredCourses = filteredCourses.stream().sorted(
             (scheduleCourse1, scheduleCourse2 ) 
             -> 
             (
