@@ -1,0 +1,27 @@
+cd auto_scheduler\target
+java -jar auto_scheduler-1.0.jar --cancel a12345679
+java -jar auto_scheduler-1.0.jar --cancel b12345679
+java -jar auto_scheduler-1.0.jar --cancel c12345679
+java -jar auto_scheduler-1.0.jar --cancel d12345679
+java -jar auto_scheduler-1.0.jar --cancel e12345679
+java -jar auto_scheduler-1.0.jar --cancel f12345679
+java -jar auto_scheduler-1.0.jar --cancel g12345679
+java -jar auto_scheduler-1.0.jar --cancel h12345679
+java -jar auto_scheduler-1.0.jar --cancel i12345679
+java -jar auto_scheduler-1.0.jar --cancel j12345679
+java -jar auto_scheduler-1.0.jar --cancel k12345679
+java -jar auto_scheduler-1.0.jar --cancel l12345679
+java -jar auto_scheduler-1.0.jar --cancel m12345679
+java -jar auto_scheduler-1.0.jar --cancel n12345679
+java -jar auto_scheduler-1.0.jar --cancel o12345679
+java -jar auto_scheduler-1.0.jar --cancel p12345679
+java -jar auto_scheduler-1.0.jar --cancel q12345679
+java -jar auto_scheduler-1.0.jar --cancel r12345679
+java -jar auto_scheduler-1.0.jar --cancel s12345679
+java -jar auto_scheduler-1.0.jar --cancel t12345679
+java -jar auto_scheduler-1.0.jar --cancel u12345679
+java -jar auto_scheduler-1.0.jar --cancel v12345679
+java -jar auto_scheduler-1.0.jar --cancel w12345679
+java -jar auto_scheduler-1.0.jar --cancel x12345679
+java -jar auto_scheduler-1.0.jar --cancel y12345679
+java -jar auto_scheduler-1.0.jar --cancel z12345679

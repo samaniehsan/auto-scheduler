@@ -1,0 +1,27 @@
+cd auto_scheduler\target
+java -jar auto_scheduler-1.0.jar --schedule a12345679
+java -jar auto_scheduler-1.0.jar --schedule b12345679
+java -jar auto_scheduler-1.0.jar --schedule c12345679
+java -jar auto_scheduler-1.0.jar --schedule d12345679
+java -jar auto_scheduler-1.0.jar --schedule e12345679
+java -jar auto_scheduler-1.0.jar --schedule f12345679
+java -jar auto_scheduler-1.0.jar --schedule g12345679
+java -jar auto_scheduler-1.0.jar --schedule h12345679
+java -jar auto_scheduler-1.0.jar --schedule i12345679
+java -jar auto_scheduler-1.0.jar --schedule j12345679
+java -jar auto_scheduler-1.0.jar --schedule k12345679
+java -jar auto_scheduler-1.0.jar --schedule l12345679
+java -jar auto_scheduler-1.0.jar --schedule m12345679
+java -jar auto_scheduler-1.0.jar --schedule n12345679
+java -jar auto_scheduler-1.0.jar --schedule o12345679
+java -jar auto_scheduler-1.0.jar --schedule p12345679
+java -jar auto_scheduler-1.0.jar --schedule q12345679
+java -jar auto_scheduler-1.0.jar --schedule r12345679
+java -jar auto_scheduler-1.0.jar --schedule s12345679
+java -jar auto_scheduler-1.0.jar --schedule t12345679
+java -jar auto_scheduler-1.0.jar --schedule u12345679
+java -jar auto_scheduler-1.0.jar --schedule v12345679
+java -jar auto_scheduler-1.0.jar --schedule w12345679
+java -jar auto_scheduler-1.0.jar --schedule x12345679
+java -jar auto_scheduler-1.0.jar --schedule y12345679
+java -jar auto_scheduler-1.0.jar --schedule z12345679

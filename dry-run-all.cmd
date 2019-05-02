@@ -1,0 +1,27 @@
+cd auto_scheduler\target
+java -jar auto_scheduler-1.0.jar --dry-run a12345679
+java -jar auto_scheduler-1.0.jar --dry-run b12345679
+java -jar auto_scheduler-1.0.jar --dry-run c12345679
+java -jar auto_scheduler-1.0.jar --dry-run d12345679
+java -jar auto_scheduler-1.0.jar --dry-run e12345679
+java -jar auto_scheduler-1.0.jar --dry-run f12345679
+java -jar auto_scheduler-1.0.jar --dry-run g12345679
+java -jar auto_scheduler-1.0.jar --dry-run h12345679
+java -jar auto_scheduler-1.0.jar --dry-run i12345679
+java -jar auto_scheduler-1.0.jar --dry-run j12345679
+java -jar auto_scheduler-1.0.jar --dry-run k12345679
+java -jar auto_scheduler-1.0.jar --dry-run l12345679
+java -jar auto_scheduler-1.0.jar --dry-run m12345679
+java -jar auto_scheduler-1.0.jar --dry-run n12345679
+java -jar auto_scheduler-1.0.jar --dry-run o12345679
+java -jar auto_scheduler-1.0.jar --dry-run p12345679
+java -jar auto_scheduler-1.0.jar --dry-run q12345679
+java -jar auto_scheduler-1.0.jar --dry-run r12345679
+java -jar auto_scheduler-1.0.jar --dry-run s12345679
+java -jar auto_scheduler-1.0.jar --dry-run t12345679
+java -jar auto_scheduler-1.0.jar --dry-run u12345679
+java -jar auto_scheduler-1.0.jar --dry-run v12345679
+java -jar auto_scheduler-1.0.jar --dry-run w12345679
+java -jar auto_scheduler-1.0.jar --dry-run x12345679
+java -jar auto_scheduler-1.0.jar --dry-run y12345679
+java -jar auto_scheduler-1.0.jar --dry-run z12345679
