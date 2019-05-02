@@ -44,4 +44,56 @@ public class CoursePrioritizationServiceImplTest {
             prioritizedCourses.toArray(
                 new CurriculumCourse[]{})[0].getCourseName());
     }
+
+    @Test
+    public void testThatBuildReturnsNoCoursesWithPrerequsites() {
+        ArrayList<CurriculumCourse> courses =  new ArrayList<CurriculumCourse>();
+
+        CurriculumCourse course0 = new CurriculumCourse();
+        course0.setCourseNumber("ML");
+
+        CurriculumCourse course1 = new CurriculumCourse();
+        course1.setCourseNumber("XYZ");
+
+        CurriculumCourse course2 = new CurriculumCourse();
+        course2.setCourseNumber("abc");
+        course2.setPreRequisite("XYZ");
+
+        CurriculumCourse course3 = new CurriculumCourse();
+        course3.setCourseNumber("abd");
+        course3.setPreRequisite("XYZ");
+
+        CurriculumCourse course44 = new CurriculumCourse();
+        course44.setCourseNumber("NL");
+
+        CurriculumCourse course45 = new CurriculumCourse();
+        course45.setCourseNumber("BL");
+        course45.setPreRequisite("NL");
+        
+
+
+        courses.add(course45);
+        courses.add(course44);
+        courses.add(course0);
+        courses.add(course1);
+        courses.add(course2);
+        courses.add(course3);
+        
+        CoursePrioritizationServiceImpl sut = new CoursePrioritizationServiceImpl();        
+        Collection<CurriculumCourse> prioritizedCourses =  sut.build(courses);
+        System.out.print("code is here");
+        assertEquals(3, prioritizedCourses.size());
+        assertEquals(
+            course1.getCourseName(), 
+            prioritizedCourses.toArray(
+                new CurriculumCourse[]{})[0].getCourseName());
+        assertEquals(
+            course44.getCourseName(), 
+            prioritizedCourses.toArray(
+            new CurriculumCourse[]{})[1].getCourseName());                
+        assertEquals(
+            course0.getCourseName(), 
+            prioritizedCourses.toArray(
+            new CurriculumCourse[]{})[2].getCourseName());
+    }
 }
