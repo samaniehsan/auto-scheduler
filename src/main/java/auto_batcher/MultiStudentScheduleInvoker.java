@@ -30,7 +30,7 @@ public class MultiStudentScheduleInvoker {
      * @return N/A
      * @exception N/A
      */
-    public void scheduleAll(Collection<Student> students) {
+    public void scheduleAll(Collection<Student> students) throws java.lang.InterruptedException {
         //Student -> NamTuble -> getID()
         for (Student studentExample : students) {
             //Sr

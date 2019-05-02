@@ -21,16 +21,18 @@ public class StudentScheduleInvoker {
      * @return N/A
      * @exception IOException
      */
-    public void schedule(String studentId) {
+    public void schedule(String studentId) throws java.lang.InterruptedException {
         // Example command:
         // java auto_scheduler-1.0.jar --schedule AXYZID
-        String pathexe = "";
-        pathexe = pathMaker(studentId);
+        String javaExecutablePrefix = "java -jar ";
+        String pathexe = javaExecutablePrefix + pathMaker(studentId);
         System.out.println("Made it");
         System.out.println(this.autoSchedulerJarPath);
         try {
             Runtime rt = Runtime.getRuntime();
-            Process pr = rt.exec(pathexe);
+            Process proc = rt.exec(pathexe);
+            int exitVal = proc.waitFor();
+            System.out.println("scheduler exitValue: " + exitVal);
         }
         catch(IOException e) {
             e.printStackTrace();
@@ -45,8 +47,7 @@ public class StudentScheduleInvoker {
      */
     public String pathMaker(String id) {
         String path = "";
-        path = this.autoSchedulerJarPath + " --schedule " + id + " \n";
-        System.out.println(path);
+        path = this.autoSchedulerJarPath + " --schedule " + id;
         return path;
     }
 }
