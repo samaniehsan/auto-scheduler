@@ -6,9 +6,13 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.ArrayList;
-
+import java.util.stream.*;
+import java.lang.Integer;
+import java.util.Map;
+import java.util.Set;
 
 public class SectionNumberSelectorServiceImpl implements SectionNumberSelectorService {
+    final int maxClasses = 5;
     public Collection<Integer> build(
         String studentId,
         Collection<CourseInfo> courseInfos,
@@ -25,7 +29,10 @@ public class SectionNumberSelectorServiceImpl implements SectionNumberSelectorSe
         int nSections = courseInfos.size();
         
         if(nCourses > 0 && nSections > 0) {
-            ArrayList<Integer> sectionNumbers = new ArrayList<Integer>();
+            Map<String, List<CourseInfo>> courseMapping = getRelevantClasses(
+                courseInfos, 
+                prioritizedCourses);
+            Collection<Integer> sectionNumbers = getRelevantClasses(courseMapping);
             return sectionNumbers;
         } else {
             if (nCourses > 0 ) {
@@ -35,4 +42,67 @@ public class SectionNumberSelectorServiceImpl implements SectionNumberSelectorSe
         }
     }
 
+    private Collection<Integer> getRelevantClasses(
+        Map<String, List<CourseInfo>> courseNumberMap
+    ) {
+        Map<Integer,Integer> usedSlots = new Hashtable<Integer,Integer>();
+        Set<String> keys = courseNumberMap.keySet();
+        for(String key: keys) {
+            List<CourseInfo> courseInfos = courseNumberMap.get(key);
+            if(courseInfos != null) {
+                for(CourseInfo courseInfo:courseInfos) {
+                    Integer timeSlotLookedup = usedSlots.get(
+                        new Integer(
+                            courseInfo.getTimeSlot()
+                            )
+                    );
+                    if(timeSlotLookedup == null) {
+                        usedSlots.put(
+                            new Integer(courseInfo.getTimeSlot()),
+                            new Integer(courseInfo.getSectionNumber()));
+                        break;
+                    }
+                }
+            }
+            if(maxClasses == usedSlots.size()) {
+                break;
+            }
+        }
+        return usedSlots.values();
+    }
+    private Map<String, List<CourseInfo>> getRelevantClasses(
+        Collection<CourseInfo> courseInfos,
+        Collection<CurriculumCourse> prioritizedCourses
+    ) {
+        Collection<CourseInfo> filteredCourses = courseInfos.stream().filter(
+            courseInfo ->
+            courseInfo.getEnrolled() < courseInfo.getCapacity()
+        ).filter(
+            course ->
+            prioritizedCourses.stream().noneMatch(
+                prioritizedCourse ->
+                prioritizedCourse.getCourseNumber().equalsIgnoreCase(course.getCourseNumber())
+            )
+        ).sorted(
+            (scheduleCourse1, scheduleCourse2 ) 
+            -> 
+            (
+                new Integer(
+                scheduleCourse1.getTimeSlot()
+                )
+            ).
+            compareTo(
+                new Integer(
+                    scheduleCourse2.getTimeSlot()
+                )
+            )
+        ).collect(Collectors.toList());
+        
+        Map<String, List<CourseInfo>> slotsPerCourse = 
+        filteredCourses.stream().collect(
+            Collectors.groupingBy(CourseInfo::getCourseNumber)
+        );
+
+        return slotsPerCourse;
+    }
 }

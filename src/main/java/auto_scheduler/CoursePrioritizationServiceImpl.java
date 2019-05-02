@@ -14,12 +14,9 @@ import java.lang.NullPointerException;
 
 public class CoursePrioritizationServiceImpl implements CoursePrioritizationService {
     public Collection<CurriculumCourse> build(
-        Collection<CurriculumCourse> candidateCourses, 
-        Collection<String> passedCourses) {
+        Collection<CurriculumCourse> candidateCourses) {
         if(candidateCourses == null)
             throw new NullPointerException("candidateCoruses can not be null");
-        if(passedCourses == null)
-            throw new NullPointerException("passedCourses can not be null");
         
         int nCandidates = candidateCourses.size();
         

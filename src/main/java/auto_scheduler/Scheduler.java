@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.stream.*;
 
 public class Scheduler implements ScheduleAction {
 	ResourcePathProvider pathProvider;
@@ -45,34 +46,65 @@ public class Scheduler implements ScheduleAction {
 		
 		CandidateCourseService candiateCourseService = new CandidateCourseServiceImpl();
 		Collection<CurriculumCourse>  candidateCourses = candiateCourseService.buildList(records, curriculumCourses);
-        Collection<String> passedClasses = candiateCourseService.getPassedCourses(records);
-		
+        
 		printDegreePlan("Candidate Courses", candidateCourses);
 
 		CoursePrioritizationService prioritizationService = new CoursePrioritizationServiceImpl(); 
-		Collection<CurriculumCourse> prioritizedCourses = prioritizationService.build(candidateCourses, passedClasses);
+		Collection<CurriculumCourse> prioritizedCourses = prioritizationService.build(candidateCourses);
+		printDegreePlan("Prioritized Courses", prioritizedCourses);
 
-		CourseScheduleRepository CourseScheduleRepository = new CourseScheduleRepositoryImpl(this.pathProvider);
-		Collection<CourseInfo> courseInfos = CourseScheduleRepository.getClasses();
+		CourseScheduleRepository courseScheduleRepository = new CourseScheduleRepositoryImpl(this.pathProvider);
+		Collection<CourseInfo> courseInfos = courseScheduleRepository.getClasses();
 
 		SectionNumberSelectorService sectionNumberSelectionService = new SectionNumberSelectorServiceImpl();
 		Collection<Integer> sectionNumbers = sectionNumberSelectionService.build(
 			studentId,
 			courseInfos,
 			prioritizedCourses);
+		
+		printSectionNumbers(sectionNumbers);
 
 		if(!readonlyMode) {
 			StudentScheduleRepository studentScheduleRepository = new StudentScheduleRepositoryImpl(this.pathProvider);
 			//waitin on Barry's pr to get merged to change this to write section numbers.
 			studentScheduleRepository.write(
 				studentId,
-				null);
+				sectionNumbers);
+			courseScheduleRepository.incrementEnrolledCount(sectionNumbers);
+			Collection<CourseInfo> registeredCourses = filterCourseInfoBySectionNumbers(courseInfos, sectionNumbers);
+			return new ScheduleTaskResult(
+				studentId,
+				registeredCourses);
+		} else {
+			Collection<CourseInfo> registeredCourses = filterCourseInfoBySectionNumbers(courseInfos, sectionNumbers);
+			return new DryRunTaskResult(
+				studentId,
+				registeredCourses);
 		}
-		
-
-		return null;
 	}
 
+	private Collection<CourseInfo> filterCourseInfoBySectionNumbers(
+		Collection<CourseInfo> courseInfos,
+		Collection<Integer> sectionNumbers) {
+		
+		Collection<CourseInfo> courses = courseInfos.stream().filter(
+				courseInfo ->
+				sectionNumbers.stream().noneMatch(
+					sectionNumber -> 
+					courseInfo.getSectionNumber() == sectionNumber.intValue()
+					)
+			).collect(Collectors.toList());
+		return courses;
+	}
+
+	private void printSectionNumbers(Collection<Integer> sectionNumbers) {
+		System.out.println("******"+ "sections" + "******");
+		if(sectionNumbers != null ) { 
+			for(Integer sectionNumber: sectionNumbers) {
+				System.out.format("Section %d\n",sectionNumber);
+			}
+		}
+	}
 	private void printGrades(Iterable<StudentRecord> records) {
 		System.out.println("******Grades******");
 		if(records != null ) {

@@ -2,11 +2,10 @@ package org.txstate.auto_scheduler;
 
 import java.util.Collection;
 
-public class ShowScheduleSet extends ScheduleResultBase {
-
-    public ShowScheduleSet(
+public class ScheduleTaskResult extends ScheduleResultBase {
+    public ScheduleTaskResult(
         String studentId,
         Collection<CourseInfo> studentSchedule) {
-        super(studentId, "show Schedule", studentSchedule);
+        super(studentId, "schedule", studentSchedule);
     }
 }

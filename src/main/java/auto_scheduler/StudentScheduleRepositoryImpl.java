@@ -66,7 +66,6 @@ public class StudentScheduleRepositoryImpl implements StudentScheduleRepository 
     
     public void write(String studentId, Collection<Integer> sectionNumbers)
         throws FileNotFoundException,  IOException {
-        ArrayList<Integer> list = new ArrayList<>(sectionNumbers);
         if(studentId == null || studentId.isEmpty()) 
             throw new IllegalArgumentException("studentid is required!");
         
@@ -81,10 +80,12 @@ public class StudentScheduleRepositoryImpl implements StudentScheduleRepository 
                 CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.withHeader("SectionNumber"));
 
         ) {
-            for (int i = 0; i < (list.size()); i++)
+            for (Integer sectionNumber: sectionNumbers) {
                 csvPrinter.printRecord(
-                        list.get(i));
+                    sectionNumber);
 
+            }
+                
             csvPrinter.flush();
         }
     }
