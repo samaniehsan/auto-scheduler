@@ -1,5 +1,6 @@
 package org.txstate.auto_batcher;
 import java.lang.UnsupportedOperationException;
+import java.io.File;
 import java.io.IOException;
 /**
  * StudentScheduleInvoker.java : Will compaile the Student ID into a java command to run auto_scheduler
@@ -29,8 +30,10 @@ public class StudentScheduleInvoker {
         System.out.println("Made it");
         System.out.println(this.autoSchedulerJarPath);
         try {
-            Runtime rt = Runtime.getRuntime();
-            Process proc = rt.exec(pathexe);
+
+            ProcessBuilder pb = new ProcessBuilder(pathexe);
+            pb.directory(new File(getWorkingDirectory()));
+            Process proc = pb.start();
             int exitVal = proc.waitFor();
             System.out.println("scheduler exitValue: " + exitVal);
         }
@@ -49,5 +52,16 @@ public class StudentScheduleInvoker {
         String path = "";
         path = this.autoSchedulerJarPath + " --schedule " + id;
         return path;
+    }
+
+    public String getWorkingDirectory() {
+        String jarFileDirPath = null;
+        File jarFile = new File(this.autoSchedulerJarPath);
+        if(jarFile.exists()) {
+            jarFileDirPath = jarFile.getAbsoluteFile().getParentFile().getAbsolutePath();
+        } else {
+            System.err.print("File does not exist" + this.autoSchedulerJarPath);
+        }
+        return jarFileDirPath;
     }
 }
