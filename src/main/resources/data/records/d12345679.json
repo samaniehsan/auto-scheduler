@@ -3,7 +3,7 @@
     "firstName": "James",
     "lastName": "Davis",
     "dateOfBirth": "1990-05-06",
-    "studentId": "D12345679",
+    "studentId": "d12345679",
     "year": 1,
     "major": "computer_science"
 }
