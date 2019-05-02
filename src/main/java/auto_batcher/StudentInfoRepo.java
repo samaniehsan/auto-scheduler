@@ -63,7 +63,11 @@ public class StudentInfoRepo
 	}
 
 	public Map<NameTuple, Long> getRepo(){
-		return repository;
+		if(repository.isEmpty()){
+			return null;
+		}else{
+			return repository;
+		}
 	} 
 
 }

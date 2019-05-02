@@ -21,7 +21,7 @@ public class Invoker {
 		this.newFile = newFile;
 	}
 
-	public File[] runParser() throws ParseException {
+	public File[] runParser() {
 		File folder = new File(newFile);
 		File[] listOfFiles = folder.listFiles(new FilenameFilter() {
 			public boolean accept(File dir, String name) {
