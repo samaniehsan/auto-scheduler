@@ -51,6 +51,7 @@ public class Scheduler implements ScheduleAction {
 
 		CoursePrioritizationService prioritizationService = new CoursePrioritizationServiceImpl(); 
 		Collection<CurriculumCourse> prioritizedCourses = prioritizationService.build(candidateCourses);
+		printDegreePlan("Prioritized Courses", prioritizedCourses);
 
 		CourseScheduleRepository courseScheduleRepository = new CourseScheduleRepositoryImpl(this.pathProvider);
 		Collection<CourseInfo> courseInfos = courseScheduleRepository.getClasses();
@@ -60,13 +61,15 @@ public class Scheduler implements ScheduleAction {
 			studentId,
 			courseInfos,
 			prioritizedCourses);
+		
+		printSectionNumbers(sectionNumbers);
 
 		if(!readonlyMode) {
 			StudentScheduleRepository studentScheduleRepository = new StudentScheduleRepositoryImpl(this.pathProvider);
 			//waitin on Barry's pr to get merged to change this to write section numbers.
 			studentScheduleRepository.write(
 				studentId,
-				null);
+				sectionNumbers);
 			courseScheduleRepository.incrementEnrolledCount(sectionNumbers);
 			Collection<CourseInfo> registeredCourses = filterCourseInfoBySectionNumbers(courseInfos, sectionNumbers);
 			return new ScheduleTaskResult(
@@ -94,6 +97,14 @@ public class Scheduler implements ScheduleAction {
 		return courses;
 	}
 
+	private void printSectionNumbers(Collection<Integer> sectionNumbers) {
+		System.out.println("******"+ "sections" + "******");
+		if(sectionNumbers != null ) { 
+			for(Integer sectionNumber: sectionNumbers) {
+				System.out.format("Section %d\n",sectionNumber);
+			}
+		}
+	}
 	private void printGrades(Iterable<StudentRecord> records) {
 		System.out.println("******Grades******");
 		if(records != null ) {
