@@ -7,9 +7,11 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.stream.*;
-import java.lang.Integer; 
+import java.lang.Integer;
+import java.util.Map;
 
 public class SectionNumberSelectorServiceImpl implements SectionNumberSelectorService {
+    final int maxClasses = 5;
     public Collection<Integer> build(
         String studentId,
         Collection<CourseInfo> courseInfos,
@@ -27,7 +29,7 @@ public class SectionNumberSelectorServiceImpl implements SectionNumberSelectorSe
         
         if(nCourses > 0 && nSections > 0) {
             ArrayList<Integer> sectionNumbers = new ArrayList<Integer>();
-            Collection<CourseInfo> relevantCourses = getRelevantClasses(
+            Map<String, List<CourseInfo>> courseMapping = getRelevantClasses(
                 courseInfos, 
                 prioritizedCourses);
             return sectionNumbers;
@@ -39,11 +41,11 @@ public class SectionNumberSelectorServiceImpl implements SectionNumberSelectorSe
         }
     }
 
-    Collection<CourseInfo> getRelevantClasses(
+    private Map<String, List<CourseInfo>> getRelevantClasses(
         Collection<CourseInfo> courseInfos,
         Collection<CurriculumCourse> prioritizedCourses
     ) {
-        List<CourseInfo>  candidateCourses = courseInfos.stream().filter(
+        Collection<CourseInfo> filteredCourses = courseInfos.stream().filter(
             courseInfo ->
             courseInfo.getEnrolled() < courseInfo.getCapacity()
         ).filter(
@@ -66,6 +68,13 @@ public class SectionNumberSelectorServiceImpl implements SectionNumberSelectorSe
                 )
             )
         ).collect(Collectors.toList());
-        return candidateCourses;
+        
+        Map<String, List<CourseInfo>> slotsPerCourse = 
+        filteredCourses.stream().collect(
+            Collectors.groupingBy(CourseInfo::getCourseNumber)
+        );
+        slotsPerCourse.size();
+        return slotsPerCourse;
+        //return null;
     }
 }
