@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.stream.*;
 
 public class Scheduler implements ScheduleAction {
 	ResourcePathProvider pathProvider;
@@ -45,15 +46,14 @@ public class Scheduler implements ScheduleAction {
 		
 		CandidateCourseService candiateCourseService = new CandidateCourseServiceImpl();
 		Collection<CurriculumCourse>  candidateCourses = candiateCourseService.buildList(records, curriculumCourses);
-        Collection<String> passedClasses = candiateCourseService.getPassedCourses(records);
-		
+        
 		printDegreePlan("Candidate Courses", candidateCourses);
 
 		CoursePrioritizationService prioritizationService = new CoursePrioritizationServiceImpl(); 
-		Collection<CurriculumCourse> prioritizedCourses = prioritizationService.build(candidateCourses, passedClasses);
+		Collection<CurriculumCourse> prioritizedCourses = prioritizationService.build(candidateCourses);
 
-		CourseScheduleRepository CourseScheduleRepository = new CourseScheduleRepositoryImpl(this.pathProvider);
-		Collection<CourseInfo> courseInfos = CourseScheduleRepository.getClasses();
+		CourseScheduleRepository courseScheduleRepository = new CourseScheduleRepositoryImpl(this.pathProvider);
+		Collection<CourseInfo> courseInfos = courseScheduleRepository.getClasses();
 
 		SectionNumberSelectorService sectionNumberSelectionService = new SectionNumberSelectorServiceImpl();
 		Collection<Integer> sectionNumbers = sectionNumberSelectionService.build(
@@ -67,10 +67,31 @@ public class Scheduler implements ScheduleAction {
 			studentScheduleRepository.write(
 				studentId,
 				null);
+			courseScheduleRepository.incrementEnrolledCount(sectionNumbers);
+			Collection<CourseInfo> registeredCourses = filterCourseInfoBySectionNumbers(courseInfos, sectionNumbers);
+			return new ScheduleTaskResult(
+				studentId,
+				registeredCourses);
+		} else {
+			Collection<CourseInfo> registeredCourses = filterCourseInfoBySectionNumbers(courseInfos, sectionNumbers);
+			return new DryRunTaskResult(
+				studentId,
+				registeredCourses);
 		}
-		
+	}
 
-		return null;
+	private Collection<CourseInfo> filterCourseInfoBySectionNumbers(
+		Collection<CourseInfo> courseInfos,
+		Collection<Integer> sectionNumbers) {
+		
+		Collection<CourseInfo> courses = courseInfos.stream().filter(
+				courseInfo ->
+				sectionNumbers.stream().noneMatch(
+					sectionNumber -> 
+					courseInfo.getSectionNumber() == sectionNumber.intValue()
+					)
+			).collect(Collectors.toList());
+		return courses;
 	}
 
 	private void printGrades(Iterable<StudentRecord> records) {

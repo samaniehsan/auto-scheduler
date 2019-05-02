@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.stream.*;
 import java.lang.Integer;
 import java.util.Map;
+import java.util.Set;
 
 public class SectionNumberSelectorServiceImpl implements SectionNumberSelectorService {
     final int maxClasses = 5;
@@ -28,10 +29,10 @@ public class SectionNumberSelectorServiceImpl implements SectionNumberSelectorSe
         int nSections = courseInfos.size();
         
         if(nCourses > 0 && nSections > 0) {
-            ArrayList<Integer> sectionNumbers = new ArrayList<Integer>();
             Map<String, List<CourseInfo>> courseMapping = getRelevantClasses(
                 courseInfos, 
                 prioritizedCourses);
+            Collection<Integer> sectionNumbers = getRelevantClasses(courseMapping);
             return sectionNumbers;
         } else {
             if (nCourses > 0 ) {
@@ -41,6 +42,30 @@ public class SectionNumberSelectorServiceImpl implements SectionNumberSelectorSe
         }
     }
 
+    private Collection<Integer> getRelevantClasses(
+        Map<String, List<CourseInfo>> courseNumberMap
+    ) {
+        Map<Integer,Integer> usedSlots = new Hashtable<Integer,Integer>();
+        Set<String> keys = courseNumberMap.keySet();
+        for(String key: keys) {
+            List<CourseInfo> courseInfos = courseNumberMap.get(key);
+            if(courseInfos != null) {
+                for(CourseInfo courseInfo:courseInfos) {
+                    Integer timeSlotLookedup = usedSlots.get(courseInfo.getTimeSlot());
+                    if(timeSlotLookedup == null) {
+                        usedSlots.put(
+                            courseInfo.getTimeSlot(),
+                            courseInfo.getSectionNumber());
+                        break;
+                    }
+                }
+            }
+            if(maxClasses == usedSlots.size()) {
+                break;
+            }
+        }
+        return usedSlots.values();
+    }
     private Map<String, List<CourseInfo>> getRelevantClasses(
         Collection<CourseInfo> courseInfos,
         Collection<CurriculumCourse> prioritizedCourses
@@ -73,8 +98,7 @@ public class SectionNumberSelectorServiceImpl implements SectionNumberSelectorSe
         filteredCourses.stream().collect(
             Collectors.groupingBy(CourseInfo::getCourseNumber)
         );
-        slotsPerCourse.size();
+
         return slotsPerCourse;
-        //return null;
     }
 }

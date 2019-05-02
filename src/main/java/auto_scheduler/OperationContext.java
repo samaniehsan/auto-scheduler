@@ -19,6 +19,9 @@ public class OperationContext {
     }
 	
 	public String getStudentId() {
-        return this.studentId;
+		return 
+		this.studentId != null ? 
+		this.studentId.toLowerCase() :
+		null ;
     }		
 }
