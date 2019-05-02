@@ -51,11 +51,15 @@ public class SectionNumberSelectorServiceImpl implements SectionNumberSelectorSe
             List<CourseInfo> courseInfos = courseNumberMap.get(key);
             if(courseInfos != null) {
                 for(CourseInfo courseInfo:courseInfos) {
-                    Integer timeSlotLookedup = usedSlots.get(courseInfo.getTimeSlot());
+                    Integer timeSlotLookedup = usedSlots.get(
+                        new Integer(
+                            courseInfo.getTimeSlot()
+                            )
+                    );
                     if(timeSlotLookedup == null) {
                         usedSlots.put(
-                            courseInfo.getTimeSlot(),
-                            courseInfo.getSectionNumber());
+                            new Integer(courseInfo.getTimeSlot()),
+                            new Integer(courseInfo.getSectionNumber()));
                         break;
                     }
                 }
