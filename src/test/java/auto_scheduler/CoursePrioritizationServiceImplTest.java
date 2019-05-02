@@ -16,16 +16,15 @@ public class CoursePrioritizationServiceImplTest {
     @Test(expected = NullPointerException.class)
     public void testbuildListShouldThrowNullPointerException() {
         CoursePrioritizationServiceImpl sut = new CoursePrioritizationServiceImpl();
-        sut.build(null, null);
+        sut.build(null);
     }
     
     @Test
     public void testThatBuildReturnsZeroIfCandicateCoursesWhereZero() {
         CoursePrioritizationServiceImpl sut = new CoursePrioritizationServiceImpl();
         ArrayList<CurriculumCourse> courses =  new ArrayList<CurriculumCourse>();
-        ArrayList<String> passedClasses = new ArrayList<String>();
         
-        Collection<CurriculumCourse> prioritizedCourses =  sut.build(courses,passedClasses);
+        Collection<CurriculumCourse> prioritizedCourses =  sut.build(courses);
         assertEquals(0, prioritizedCourses.size());
     }
 
@@ -33,14 +32,12 @@ public class CoursePrioritizationServiceImplTest {
     public void testThatBuildReturnsOneIfCandicateCoursesWhereOne() {
         CoursePrioritizationServiceImpl sut = new CoursePrioritizationServiceImpl();
         ArrayList<CurriculumCourse> courses =  new ArrayList<CurriculumCourse>();
-        ArrayList<String> passedClasses = new ArrayList<String>();
+        
         CurriculumCourse course = new CurriculumCourse();
         course.setCourseNumber("XYZ");
         courses.add(course);
         
-        Collection<CurriculumCourse> prioritizedCourses =  sut.build(
-            courses, 
-            passedClasses);
+        Collection<CurriculumCourse> prioritizedCourses =  sut.build(courses);
         assertEquals(1, prioritizedCourses.size());
         assertEquals(
             course.getCourseName(), 
